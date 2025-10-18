@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Frankie Colunga — Software Developer & GIS</title>
+<meta name="description" content="Portfolio of Frankie Colunga — Python, Java, SQL, and geospatial tooling." />
+<style>
+:root{--bg:#fff;--text:#111;--muted:#555;--accent:#2d6cdf;--card:#f5f7fb;--border:#e5e7eb}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--text:#e5e7eb;--muted:#a1a1aa;--accent:#7aa2ff;--card:#141821;--border:#252a36}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
+.container{width:min(1100px,92%);margin:0 auto}
+.section{padding:3.5rem 0}
+h1,h2,h3{line-height:1.2}
+h1{font-size:clamp(2rem,1.2rem + 2.5vw,3rem);margin:.5rem 0}
+h2{font-size:clamp(1.5rem,1rem + 1.2vw,2rem);margin-top:0}
+.lead{color:var(--muted);max-width:65ch}
+.accent{color:var(--accent)}
+.site-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.logo{text-decoration:none;color:var(--text);font-weight:800;border:2px solid var(--text);padding:.15rem .45rem;border-radius:6px}
+.nav-menu{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.nav-menu a{text-decoration:none;color:var(--text)}
+.nav-toggle{display:none}
+@media(max-width:740px){
+  .nav-toggle{display:inline-flex;align-items:center;border:1px solid var(--border);background:transparent;color:var(--text);padding:.4rem .6rem;border-radius:6px}
+  .nav-menu{display:none;position:absolute;top:56px;right:4%;background:var(--bg);border:1px solid var(--border);padding:.6rem;flex-direction:column}
+  .nav-menu.open{display:flex}
+}
+.hero{padding:3rem 0 2rem}
+.cta{display:flex;gap:.8rem;margin:1rem 0 .5rem}
+.meta{display:flex;gap:1rem;list-style:none;padding:0;margin:.5rem 0 0;color:var(--muted)}
+.btn{display:inline-block;border:1px solid var(--border);padding:.6rem .9rem;border-radius:8px;text-decoration:none;color:var(--text);background:transparent;transition:transform .05s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+.card h3{margin:0}
+.card p{margin:0;color:var(--muted)}
+.tag{font-size:.85rem;padding:.15rem .5rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;display:inline-block;margin:.2rem .3rem 0 0}
+.actions{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;list-style:none;padding:0}
+.chips li{border:1px solid var(--border);background:var(--card);padding:.25rem .6rem;border-radius:999px}
+.contact-list{list-style:none;padding:0}
+.contact-form{margin-top:1rem;display:grid;gap:.5rem}
+textarea{width:100%;border-radius:8px;border:1px solid var(--border);padding:.6rem;background:var(--bg);color:var(--text)}
+.site-footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted)}
+.skip-link{position:absolute;left:-999px} .skip-link:focus{position:static;background:var(--accent);color:#fff;padding:.5rem}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header" role="banner">
+  <nav class="nav container" aria-label="Primary">
+    <a class="logo" href="/">FC</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">Menu</button>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="content">
+  <section class="hero container">
+    <h1>Hi, I’m <span class="accent">Frankie Colunga</span>.</h1>
+    <p class="lead">Software developer & GIS student building data-driven tools in <strong>Python</strong>, <strong>Java</strong>, and <strong>SQL</strong> — with a geospatial edge.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+    <ul class="meta">
+      <li>📍 San Bernardino, CA</li>
+      <li>🎓 University of Redlands — CS & GIS (’26)</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="container section">
+    <h2>Projects</h2>
+    <div class="grid" id="projectGrid"></div>
+    <p class="note" style="color:var(--muted)">Code links open on GitHub. Proprietary work is presented as case studies.</p>
+  </section>
+
+  <section id="about" class="container section">
+    <h2>About</h2>
+    <p>I’m a Computer Science & GIS double major who enjoys building practical software that reduces friction in real-world workflows. I’ve shipped a desktop validation tool used in public-safety map upgrades, built Java simulations, and designed normalized SQL databases with forms and reports.</p>
+    <ul class="chips">
+      <li>Python</li><li>Java</li><li>SQL</li><li>ArcGIS Pro</li><li>Tkinter</li><li>PyInstaller</li>
+    </ul>
+  </section>
+
+  <section id="resume" class="container section">
+    <h2>Resume</h2>
+    <p>Upload your PDF to the repo later and link it here.</p>
+    <p><a class="btn" href="#" id="resumeLink" target="_blank" rel="noopener">View Résumé (PDF)</a></p>
+  </section>
+
+  <section id="contact" class="container section">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></li>
+      <li>LinkedIn: <a href="#" id="linkedinLink">Add your link</a></li>
+      <li>GitHub: <a href="#" id="githubLink">Add your link</a></li>
+    </ul>
+    <a class="btn" href="mailto:colungafrankie@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Frankie Colunga. Built with HTML + CSS + JS. Hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('nav-menu');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- EDIT THESE LINKS AFTER PUBLISHING ----
+const LINKS = {
+  resume: "#", // e.g., "/assets/Frankie_Colunga_Resume.pdf"
+  linkedin: "https://www.linkedin.com/in/your-handle/",
+  github: "https://github.com/your-username"
+};
+document.getElementById('resumeLink').href = LINKS.resume;
+document.getElementById('linkedinLink').href = LINKS.linkedin;
+document.getElementById('githubLink').href = LINKS.github;
+
+// Projects (edit URLs)
+const projects = [
+  {
+    title: "MMPK Checker Tool (Case Study)",
+    description: "Desktop app to validate Mobile Map Packages used in public-safety dispatch upgrades. Drag-and-drop GUI, integrity checks, and one-click packaging.",
+    tags: ["Python","TkinterDnD2","PyInstaller","GIS"],
+    links: [{ href: "https://notion.so/your-mmpk-case-study", label: "Read Case Study" }]
+  },
+  {
+    title: "Controllable Objects Simulation",
+    description: "Java program where multiple objects move with unique rules and control can be switched via the Tab key.",
+    tags: ["Java","OOP"],
+    links: [{ href: "https://github.com/your-username/controllable-objects", label: "View Code" }]
+  },
+  {
+    title: "SQL Database Manager",
+    description: "Normalized schema with referential integrity and CRUD forms; indexes and queries tuned for performance.",
+    tags: ["SQL","DB Design","Indexes"],
+    links: [{ href: "https://github.com/your-username/sql-manager", label: "View Code" }]
+  },
+  {
+    title: "GIS Siting Analysis",
+    description: "Weighted overlay to find optimal bike shop locations (income, cycling participation, competitors).",
+    tags: ["ArcGIS Pro","Raster","Weighted Overlay"],
+    links: [{ href: "https://your-storymap-or-dashboard-link", label: "Open Dashboard" }]
+  }
+];
+
+function createCard(p){
+  const card = document.createElement('article');
+  card.className = 'card';
+  const h3 = document.createElement('h3'); h3.textContent = p.title;
+  const desc = document.createElement('p'); desc.textContent = p.description;
+
+  const tagWrap = document.createElement('div');
+  p.tags.forEach(t => { const s=document.createElement('span'); s.className='tag'; s.textContent=t; tagWrap.appendChild(s); });
+
+  const actions = document.createElement('div'); actions.className='actions';
+  p.links.forEach(l => { const a=document.createElement('a'); a.className='btn'; a.href=l.href; a.target='_blank'; a.rel='noopener'; a.textContent=l.label; actions.appendChild(a); });
+
+  card.append(h3, desc, tagWrap, actions); return card;
+}
+const grid = document.getElementById('projectGrid');
+projects.forEach(p => grid.appendChild(createCard(p)));
+</script>
+</body>
+</html>

@@ -1,187 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Frankie Colunga — Software Developer & GIS</title>
-<meta name="description" content="Portfolio of Frankie Colunga — Python, Java, SQL, and geospatial tooling." />
-<style>
-:root{--bg:#fff;--text:#111;--muted:#555;--accent:#2d6cdf;--card:#f5f7fb;--border:#e5e7eb}
-@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--text:#e5e7eb;--muted:#a1a1aa;--accent:#7aa2ff;--card:#141821;--border:#252a36}}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
-.container{width:min(1100px,92%);margin:0 auto}
-.section{padding:3.5rem 0}
-h1,h2,h3{line-height:1.2}
-h1{font-size:clamp(2rem,1.2rem + 2.5vw,3rem);margin:.5rem 0}
-h2{font-size:clamp(1.5rem,1rem + 1.2vw,2rem);margin-top:0}
-.lead{color:var(--muted);max-width:65ch}
-.accent{color:var(--accent)}
-.site-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-.logo{text-decoration:none;color:var(--text);font-weight:800;border:2px solid var(--text);padding:.15rem .45rem;border-radius:6px}
-.nav-menu{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
-.nav-menu a{text-decoration:none;color:var(--text)}
-.nav-toggle{display:none}
-@media(max-width:740px){
-  .nav-toggle{display:inline-flex;align-items:center;border:1px solid var(--border);background:transparent;color:var(--text);padding:.4rem .6rem;border-radius:6px}
-  .nav-menu{display:none;position:absolute;top:56px;right:4%;background:var(--bg);border:1px solid var(--border);padding:.6rem;flex-direction:column}
-  .nav-menu.open{display:flex}
-}
-.hero{padding:3rem 0 2rem}
-.cta{display:flex;gap:.8rem;margin:1rem 0 .5rem}
-.meta{display:flex;gap:1rem;list-style:none;padding:0;margin:.5rem 0 0;color:var(--muted)}
-.btn{display:inline-block;border:1px solid var(--border);padding:.6rem .9rem;border-radius:8px;text-decoration:none;color:var(--text);background:transparent;transition:transform .05s}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.5rem}
-.card h3{margin:0}
-.card p{margin:0;color:var(--muted)}
-.tag{font-size:.85rem;padding:.15rem .5rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;display:inline-block;margin:.2rem .3rem 0 0}
-.actions{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
-.chips{display:flex;gap:.5rem;flex-wrap:wrap;list-style:none;padding:0}
-.chips li{border:1px solid var(--border);background:var(--card);padding:.25rem .6rem;border-radius:999px}
-.contact-list{list-style:none;padding:0}
-.contact-form{margin-top:1rem;display:grid;gap:.5rem}
-textarea{width:100%;border-radius:8px;border:1px solid var(--border);padding:.6rem;background:var(--bg);color:var(--text)}
-.site-footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted)}
-.skip-link{position:absolute;left:-999px} .skip-link:focus{position:static;background:var(--accent);color:#fff;padding:.5rem}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frankie Colunga · Software Developer & GIS</title>
+  <meta name="description" content="Portfolio of Frankie Colunga — Software Developer & GIS Analyst skilled in Python, Java, SQL, and ArcGIS Pro. Creator of MMPK File Checker and spatial analysis tools." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Frankie Colunga · Software Developer & GIS" />
+  <meta property="og:description" content="Python, Java, SQL, and ArcGIS Pro — blending software development with geospatial analysis." />
+  <meta property="og:url" content="https://frankiecolunga.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://frankiecolunga.github.io/preview.png" />
+  <style>
+    :root{
+      --bg:#0b0c10;--panel:#111218;--ink:#e6e8ef;--muted:#9aa3b2;
+      --brand:#6ee7b7;--brand-ink:#0b0c10;--card:#12141c;--shadow:rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+    .nav{position:sticky;top:0;backdrop-filter:blur(8px);
+      background:rgba(11,12,16,.7);border-bottom:1px solid #1c1f2b;z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 28px}
+    .brand{font-weight:800;letter-spacing:.25px}
+    .nav-links{display:flex;gap:18px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);
+      color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;
+      box-shadow:0 8px 20px var(--shadow);transition:transform .12s ease,box-shadow .12s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px var(--shadow)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:28px}
+    .hero h1{font-size:44px;line-height:1.08;margin:0 0 10px}
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
+    .tag{display:inline-block;border:1px solid #283047;color:#a6b3c2;
+      padding:6px 10px;border-radius:999px;font-size:12px;margin-right:10px}
+    .panel{background:var(--panel);border:1px solid #1c1f2b;border-radius:20px;padding:22px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .col-6{grid-column:span 6}.col-12{grid-column:span 12}
+    .card{background:var(--card);border:1px solid #1c1f2b;border-radius:18px;
+      padding:18px;box-shadow:0 8px 18px var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{background:#1b2030;color:#c8d1df;border:1px solid #273048;
+      border-radius:999px;padding:6px 10px;font-size:12px}
+    .section{margin:44px 0 18px}.section h2{margin:0 0 10px;font-size:24px}
+    .list{display:flex;flex-direction:column;gap:12px}
+    .footer{margin:40px 0 24px;color:#7b8496;text-align:center;font-size:13px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+    .kpi{background:#0f1320;border:1px solid #1c2036;border-radius:14px;
+      padding:14px;text-align:center}
+    .kpi .v{font-size:22px;font-weight:800}.kpi .l{font-size:12px;color:#9aa3b2}
+    @media(max-width:860px){.hero{grid-template-columns:1fr}.col-6{grid-column:span 12}}
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#content">Skip to content</a>
-<header class="site-header" role="banner">
-  <nav class="nav container" aria-label="Primary">
-    <a class="logo" href="/">FC</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">Menu</button>
-    <ul id="nav-menu" class="nav-menu">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Frankie Colunga</div>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="mailto:colungafrankie@gmail.com">Email me</a>
+    </nav>
+  </div>
 </header>
 
-<main id="content">
-  <section class="hero container">
-    <h1>Hi, I’m <span class="accent">Frankie Colunga</span>.</h1>
-    <p class="lead">Software developer & GIS student building data-driven tools in <strong>Python</strong>, <strong>Java</strong>, and <strong>SQL</strong> — with a geospatial edge.</p>
-    <div class="cta">
-      <a class="btn primary" href="#projects">View Projects</a>
-      <a class="btn" href="#contact">Contact Me</a>
+<main class="container">
+<section class="hero">
+  <div>
+    <span class="tag">Software Developer · GIS</span>
+    <h1>Building tools where <span style="color:var(--brand)">code</span> meets <span style="color:var(--brand)">maps</span>.</h1>
+    <p>Senior at the University of Redlands (’26) double-majoring in Computer Science & GIS. Experienced in Python, Java, SQL, and ArcGIS Pro. Intern at Motorola Solutions and TDS Telecom.</p>
+    <div class="links">
+      <a class="btn" href="#projects">View projects</a>
+      <a class="tag" href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="tag" href="https://github.com/frankiecolunga" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <ul class="meta">
-      <li>📍 San Bernardino, CA</li>
-      <li>🎓 University of Redlands — CS & GIS (’26)</li>
+    <div class="kpis">
+      <div class="kpi"><div class="v">Python · Java · SQL</div><div class="l">Core Stack</div></div>
+      <div class="kpi"><div class="v">ArcGIS Pro/AGOL</div><div class="l">Spatial Tools</div></div>
+      <div class="kpi"><div class="v">Tkinter · PyInstaller</div><div class="l">Desktop Apps</div></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3 style="margin:0 0 6px">Quick profile</h3>
+    <p style="margin:0 0 12px;color:var(--muted)">Software Developer & GIS Analyst focused on practical problem-solving, clean UX, and reliable data pipelines.</p>
+    <ul class="list" style="margin:0;padding:0">
+      <li>📦 <strong>MMPK File Checker:</strong> Python desktop app validating Esri mobile map packages (.mmpk).</li>
+      <li>🎮 <strong>Controllable Objects (Java):</strong> OOP + input handling; switch control with Tab.</li>
+      <li>🗺️ <strong>Sky Viewing Area Ranking:</strong> Weighted overlay (70/30 light pollution vs air quality).</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <section id="projects" class="container section">
-    <h2>Projects</h2>
-    <div class="grid" id="projectGrid"></div>
-    <p class="note" style="color:var(--muted)">Code links open on GitHub. Proprietary work is presented as case studies.</p>
-  </section>
+<section id="projects" class="section">
+  <h2>Technical Projects</h2>
+  <div class="grid">
 
-  <section id="about" class="container section">
-    <h2>About</h2>
-    <p>I’m a Computer Science & GIS double major who enjoys building practical software that reduces friction in real-world workflows. I’ve shipped a desktop validation tool used in public-safety map upgrades, built Java simulations, and designed normalized SQL databases with forms and reports.</p>
-    <ul class="chips">
-      <li>Python</li><li>Java</li><li>SQL</li><li>ArcGIS Pro</li><li>Tkinter</li><li>PyInstaller</li>
-    </ul>
-  </section>
+    <article class="card col-6">
+      <h3>MMPK File Checker (Summer 2025)</h3>
+      <p>Built a GUI application to verify <code>.mmpk</code> files using zip parsing logic and drag-and-drop support. Converted the script into a distributable <code>.exe</code> with a custom icon for internal and customer use. Approved by Motorola Product and Engineering teams to prevent invalid file issues and improve deployment efficiency.</p>
+      <div class="meta"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">PyInstaller</span></div>
+    </article>
 
-  <section id="resume" class="container section">
-    <h2>Resume</h2>
-    <p>Upload your PDF to the repo later and link it here.</p>
-    <p><a class="btn" href="#" id="resumeLink" target="_blank" rel="noopener">View Résumé (PDF)</a></p>
-  </section>
+    <article class="card col-6">
+      <h3>Controllable Objects Simulation (Fall 2024)</h3>
+      <p>Developed an interactive Java program simulating four objects (A–D), one controllable via arrow keys and switchable with the Tab key. Demonstrated real-time movement, object state management, and event-driven input handling.</p>
+      <div class="meta"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Event Handling</span></div>
+    </article>
 
-  <section id="contact" class="container section">
-    <h2>Contact</h2>
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></li>
-      <li>LinkedIn: <a href="#" id="linkedinLink">Add your link</a></li>
-      <li>GitHub: <a href="#" id="githubLink">Add your link</a></li>
-    </ul>
-    <a class="btn" href="mailto:colungafrankie@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
-  </section>
+    <article class="card col-6">
+      <h3>Sky Viewing Area Ranking (Spring 2025)</h3>
+      <p>Ranked optimal sky-viewing areas by combining light pollution and air quality data through weighted overlay analysis. Used proximity tools to connect high-ranked locations to nearby parks for accessibility across the U.S.</p>
+      <div class="meta"><span class="chip">ArcGIS Pro</span><span class="chip">Raster Analysis</span><span class="chip">Weighted Overlay</span></div>
+    </article>
+
+    <article class="card col-6">
+      <h3>Storm Basin Proposal (Spring 2025)</h3>
+      <p>Partnered with CASC Engineering to design a storm drain basin using ArcGIS Pro and field-collected infiltration and soil data. Delivered ArcGIS maps supporting infrastructure design and spatial planning.</p>
+      <div class="meta"><span class="chip">ArcGIS Pro</span><span class="chip">Field Sampling</span><span class="chip">Cartography</span></div>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card col-12">
+      <h3>Motorola Solutions — GIS Upgrade Operations Intern</h3>
+      <p class="muted">May–Aug 2025 · Remote/Hybrid</p>
+      <ul>
+        <li>Supported system upgrades and updated map datasets for CallWorks customers.</li>
+        <li>Built a Python desktop tool to validate MMPKs, reducing deployment risk.</li>
+        <li>Collaborated across teams; documented reproducible workflows.</li>
+      </ul>
+    </div>
+    <div class="card col-12">
+      <h3>TDS Telecom — Data Analyst & GIS Intern</h3>
+      <p class="muted">Sept 2025–Present · Remote</p>
+      <ul>
+        <li>Organize and analyze internal datasets with Excel and ArcGIS Online.</li>
+        <li>Automate data checks and create simple dashboards/maps.</li>
+        <li>Partner with stakeholders to deliver actionable reports.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card col-6">
+      <h3>Languages & CS</h3>
+      <p>Python · Java · SQL · JavaScript (basic) · OOP · Data Structures · DB Design · CLI</p>
+    </div>
+    <div class="card col-6">
+      <h3>Tools & GIS</h3>
+      <p>ArcGIS Pro/AGOL · Tkinter · PyInstaller · VS Code · Git · StoryMaps · Raster & Vector Analysis</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/frankiecol/" target="_blank">linkedin.com/in/frankiecol</a></p>
+    <p>GitHub: <a href="https://github.com/frankiecolunga" target="_blank">github.com/frankiecolunga</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  © <span id="y"></span> Frankie Colunga · Built with HTML/CSS · Hosted on GitHub Pages
+</footer>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; <span id="year"></span> Frankie Colunga. Built with HTML + CSS + JS. Hosted on GitHub Pages.</p>
-  </div>
-</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 
-<script>
-// Mobile nav
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('nav-menu');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    const open = navMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Frankie Colunga",
+  "url": "https://frankiecolunga.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/frankiecol/",
+    "https://github.com/frankiecolunga"
+  ],
+  "jobTitle": "Software Developer & GIS Analyst",
+  "email": "colungafrankie@gmail.com",
+  "knowsAbout": ["Python", "Java", "SQL", "ArcGIS Pro", "Tkinter", "PyInstaller", "GIS"]
 }
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// ---- EDIT THESE LINKS AFTER PUBLISHING ----
-const LINKS = {
-  resume: "#", // e.g., "/assets/Frankie_Colunga_Resume.pdf"
-  linkedin: "https://www.linkedin.com/in/your-handle/",
-  github: "https://github.com/your-username"
-};
-document.getElementById('resumeLink').href = LINKS.resume;
-document.getElementById('linkedinLink').href = LINKS.linkedin;
-document.getElementById('githubLink').href = LINKS.github;
-
-// Projects (edit URLs)
-const projects = [
-  {
-    title: "MMPK Checker Tool (Case Study)",
-    description: "Desktop app to validate Mobile Map Packages used in public-safety dispatch upgrades. Drag-and-drop GUI, integrity checks, and one-click packaging.",
-    tags: ["Python","TkinterDnD2","PyInstaller","GIS"],
-    links: [{ href: "https://notion.so/your-mmpk-case-study", label: "Read Case Study" }]
-  },
-  {
-    title: "Controllable Objects Simulation",
-    description: "Java program where multiple objects move with unique rules and control can be switched via the Tab key.",
-    tags: ["Java","OOP"],
-    links: [{ href: "https://github.com/your-username/controllable-objects", label: "View Code" }]
-  },
-  {
-    title: "SQL Database Manager",
-    description: "Normalized schema with referential integrity and CRUD forms; indexes and queries tuned for performance.",
-    tags: ["SQL","DB Design","Indexes"],
-    links: [{ href: "https://github.com/your-username/sql-manager", label: "View Code" }]
-  },
-  {
-    title: "GIS Siting Analysis",
-    description: "Weighted overlay to find optimal bike shop locations (income, cycling participation, competitors).",
-    tags: ["ArcGIS Pro","Raster","Weighted Overlay"],
-    links: [{ href: "https://your-storymap-or-dashboard-link", label: "Open Dashboard" }]
-  }
-];
-
-function createCard(p){
-  const card = document.createElement('article');
-  card.className = 'card';
-  const h3 = document.createElement('h3'); h3.textContent = p.title;
-  const desc = document.createElement('p'); desc.textContent = p.description;
-
-  const tagWrap = document.createElement('div');
-  p.tags.forEach(t => { const s=document.createElement('span'); s.className='tag'; s.textContent=t; tagWrap.appendChild(s); });
-
-  const actions = document.createElement('div'); actions.className='actions';
-  p.links.forEach(l => { const a=document.createElement('a'); a.className='btn'; a.href=l.href; a.target='_blank'; a.rel='noopener'; a.textContent=l.label; actions.appendChild(a); });
-
-  card.append(h3, desc, tagWrap, actions); return card;
-}
-const grid = document.getElementById('projectGrid');
-projects.forEach(p => grid.appendChild(createCard(p)));
 </script>
 </body>
 </html>

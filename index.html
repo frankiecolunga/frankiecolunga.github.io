@@ -1,207 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frankie Colunga · Software Developer & GIS</title>
-  <meta name="description" content="Portfolio of Frankie Colunga — Software Developer & GIS Analyst skilled in Python, Java, SQL, and ArcGIS Pro. Creator of the MMPK File Checker and spatial analysis tools." />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#ffffff;         /* page */
-      --ink:#0f172a;        /* text */
-      --muted:#5b6473;      /* body */
-      --line:#e7ecf3;       /* borders */
-      --brand:#2563eb;      /* primary */
-      --brand-ink:#ffffff;  /* on primary */
-      --chip:#eef2ff;       /* tag */
-      --chip-ink:#3743a3;   
-      --surface:#f7f9fc;    /* section bg */
-      --card:#ffffff;       /* cards */
-      --shadow:0 12px 32px rgba(2,6,23,.06);
-      --radius:18px;        
-      --radius-lg:22px;
-      --space:28px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Frankie Colunga · Software Developer & GIS</title>
+<meta name="description" content="Software developer & GIS analyst building reliable desktop tools and geospatial workflows. Python, Java, SQL, ArcGIS Pro." />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ======= THEME ======= */
+:root{
+--bg: #ffffff; /* surfaces */
+--ink: #0f172a; /* primary text */
+--muted:#5b6473; /* secondary text */
+--line:#e8eef6; /* borders */
+--brand:#2563eb; /* accent */
+--brand-ink:#ffffff; /* on accent */
+--soft:#f7f9fc; /* soft section */
+--card:#ffffff; /* cards */
+--shadow: 0 16px 40px rgba(2,6,23,.08);
+--radius: 18px;
+--radius-lg: 24px;
+--max: 1120px;
+}
+.theme-dark{ /* graceful dark mode */
+--bg:#0b1020; --ink:#e6ebf5; --muted:#aab4c6; --line:#172038; --brand:#7dd3fc; --brand-ink:#0b1020; --soft:#0f162b; --card:#0d1326; --shadow: 0 20px 50px rgba(0,0,0,.35);
+}
 
-    /* LAYOUT */
-    .wrap{display:grid;grid-template-columns:280px 1fr;gap:28px;max-width:var(--max);margin:0 auto;padding:var(--space)}
-    .sidebar{position:sticky;top:16px;height:fit-content;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}
-    .brand{font-weight:800;letter-spacing:.2px;font-size:20px;margin:0 0 4px}
-    .subtitle{color:var(--muted);margin:0 0 16px}
-    .side-links{display:flex;flex-direction:column;gap:10px;margin:16px 0}
-    .side-links a{display:flex;justify-content:space-between;align-items:center;background:#fbfdff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;color:#334155}
-    .side-links a:hover{background:#f2f6ff}
-    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
-    .nav-minor{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-    .nav-minor a{color:#475569}
 
-    /* MAIN */
-    .main{display:flex;flex-direction:column;gap:28px}
-    .hero{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 28px}
-    .hero h1{font-size:46px;line-height:1.04;margin:0 0 10px;letter-spacing:-.3px}
-    .hero p{margin:0 0 18px;color:var(--muted);font-size:18px}
-    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-    .tag{display:inline-block;background:var(--chip);color:var(--chip-ink);border:1px solid #dbe5ff;padding:6px 12px;border-radius:999px;font-size:12px}
+/* ======= RESET / BASE ======= */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:28px}
+.overline{letter-spacing:.15em;text-transform:uppercase;font-size:12px;color:#64748b}
 
-    .section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow)}
-    .section h2{margin:0 0 8px;font-size:24px}
-    .section-sub{margin:0 0 14px;color:var(--muted)}
 
-    /* GRID & CARDS */
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .col-4{grid-column:span 4}
-    .col-6{grid-column:span 6}
-    .col-12{grid-column:span 12}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:var(--card)}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
-    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+/* ======= HEADER ======= */
+.hdr{position:sticky;top:0;z-index:40;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);background:color-mix(in oklab, var(--bg) 92%, transparent)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--max);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, var(--brand), #60a5fa);box-shadow:var(--shadow)}
+.name{font-weight:800;letter-spacing:.2px}
+.nav{display:flex;align-items:center;gap:18px}
+.ghost{padding:8px 12px;border-radius:12px;border:1px solid var(--line);color:#334155;background:color-mix(in srgb, var(--bg) 96%, #fff 4%)}
+.ghost:hover{background:color-mix(in srgb, var(--bg) 88%, #fff 12%)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
+.toggle{border:1px solid var(--line);background:transparent;border-radius:12px;padding:8px 10px}
 
-    /* TIMELINE */
-    .timeline{position:relative;margin-left:6px}
-    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
-    .t-item{position:relative;padding-left:28px;margin:16px 0}
-    .t-item:before{content:"";position:absolute;left:4px;top:.4rem;width:14px;height:14px;background:#fff;border:2px solid var(--brand);border-radius:999px}
-    .t-item h3{margin:0 0 4px;font-size:18px}
-    .t-item p{margin:0 0 6px;color:var(--muted)}
 
-    /* FOOT */
-    .foot{color:#6b7280;text-align:center;font-size:13px;padding:22px 0}
+/* ======= HERO ======= */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:22px}
+.hero h1{font-size:48px;line-height:1.02;margin:0 0 10px;letter-spacing:-.3px}
+.hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
+.badge{background:var(--soft);border:1px solid var(--line);color:#334155;padding:6px 10px;border-radius:999px;font-size:12px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center;box-shadow:var(--shadow)}
+.metric .v{font-weight:800;font-size:22px}
+.metric .l{font-size:12px;color:var(--muted)}
+.hero-card{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px}
 
-    /* MOBILE */
-    @media (max-width: 980px){
-      .wrap{grid-template-columns:1fr}
-      .sidebar{position:static}
-      .col-4,.col-6{grid-column:span 12}
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <h1 class="brand">Frankie Colunga</h1>
-      <p class="subtitle">Software Developer · GIS Analyst</p>
-      <a class="cta" href="mailto:colungafrankie@gmail.com">Email me</a>
 
-      <div class="side-links">
-        <a href="#projects">Projects<span>↗</span></a>
-        <a href="#experience">Experience<span>↗</span></a>
-        <a href="#skills">Skills<span>↗</span></a>
-        <a href="#contact">Contact<span>↗</span></a>
-      </div>
-      <div class="nav-minor">
-        <a href="https://github.com/frankiecolunga" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </aside>
+/* ======= SECTION ======= */
+.section{margin:42px 0 18px}
+.section>header{display:flex;align-items:end;justify-content:space-between;margin:0 0 12px}
+.section h2{margin:0;font-size:26px}
+.sub{color:var(--muted)}
 
-    <!-- MAIN -->
-    <main class="main">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="tags">
-          <span class="tag">Python · Java · SQL</span>
-          <span class="tag">ArcGIS Pro/AGOL</span>
-          <span class="tag">Tkinter · PyInstaller</span>
-        </div>
-        <h1>Building useful tools where <span style="color:var(--brand)">code</span> meets <span style="color:var(--brand)">maps</span>.</h1>
-        <p>Senior at the University of Redlands (’26) double‑majoring in Computer Science & GIS. I ship Python/Java apps and geospatial workflows with ArcGIS. Interned at Motorola Solutions and TDS Telecom.</p>
-      </section>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="section">
-        <h2>Technical Projects</h2>
-        <p class="section-sub">Real projects you’ve shipped. Clean cards, quick context, and tech tags.</p>
-        <div class="grid">
-          <article class="card col-6">
-            <h3>MMPK File Checker (Summer 2025)</h3>
-            <p>GUI application to verify <code>.mmpk</code> files using zip parsing and drag‑and‑drop. Packaged to a single <code>.exe</code> with custom icon for internal and customer use; reduced deployment risk by catching invalid files early.</p>
-            <div class="meta"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">PyInstaller</span></div>
-          </article>
-          <article class="card col-6">
-            <h3>Controllable Objects Simulation (Fall 2024)</h3>
-            <p>Interactive Java program with four objects (A–D); one object is controllable via arrow keys and switchable with Tab. Demonstrates real‑time movement, state management, and event‑driven input.</p>
-            <div class="meta"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Event Handling</span></div>
-          </article>
-          <article class="card col-6">
-            <h3>Sky Viewing Area Ranking (Spring 2025)</h3>
-            <p>Ranked optimal sky‑viewing areas by combining light pollution and air quality with a 70/30 weighted overlay; linked high‑scoring locations to nearby parks for accessibility.</p>
-            <div class="meta"><span class="tag">ArcGIS Pro</span><span class="tag">Raster Analysis</span><span class="tag">Weighted Overlay</span></div>
-          </article>
-          <article class="card col-6">
-            <h3>Storm Basin Proposal (Spring 2025)</h3>
-            <p>Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro plus field‑collected infiltration and soil data. Delivered cartographic products supporting planning.</p>
-            <div class="meta"><span class="tag">ArcGIS Pro</span><span class="tag">Field Sampling</span><span class="tag">Cartography</span></div>
-          </article>
-        </div>
-      </section>
+/* ======= PROJECTS (case-study style) ======= */
+.case{display:grid;grid-template-columns: .9fr 1.1fr;gap:22px;align-items:start;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;background:var(--card);box-shadow:var(--shadow)}
+.case + .case{margin-top:16px}
+.case h3{margin:0 0 6px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tag{background:var(--soft);border:1px solid var(--line);color:#334155;padding:6px 10px;border-radius:999px;font-size:12px}
+.figure{aspect-ratio: 16/10;border:1px dashed var(--line);border-radius:16px;background:repeating-linear-gradient(45deg, color-mix(in srgb, var(--soft) 84%, white 16%), color-mix(in srgb, var(--soft) 84%, white 16%) 10px, var(--soft) 10px, var(--soft) 20px);display:flex;align-items:center;justify-content:center;color:#64748b}
+.impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.chip{display:flex;flex-direction:column;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px}
+.chip .big{font-weight:800}
 
-      <!-- EXPERIENCE TIMELINE -->
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <div class="t-item">
-            <h3>Data Analyst & GIS Intern · TDS Telecom</h3>
-            <p>Sept 2025 – Present · Remote</p>
-            <ul>
-              <li>Organize and analyze internal datasets with Excel and ArcGIS Online.</li>
-              <li>Automate data checks and create simple dashboards/maps.</li>
-              <li>Partner with stakeholders to deliver actionable reports.</li>
-            </ul>
-          </div>
-          <div class="t-item">
-            <h3>GIS Upgrade Operations Intern · Motorola Solutions</h3>
-            <p>May – Aug 2025 · Remote/Hybrid</p>
-            <ul>
-              <li>Supported system upgrades and updated map datasets for CallWorks customers.</li>
-              <li>Built a Python desktop tool to validate MMPKs, reducing deployment risk.</li>
-              <li>Collaborated across teams; documented reproducible workflows.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
 
-      <!-- SKILLS -->
-      <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="grid">
-          <div class="card col-6">
-            <h3>Languages & CS</h3>
-            <p class="section-sub">Python · Java · SQL · JavaScript (basic) · OOP · Data Structures · DB Design · CLI</p>
-          </div>
-          <div class="card col-6">
-            <h3>Tools & GIS</h3>
-            <p class="section-sub">ArcGIS Pro/AGOL · Tkinter · PyInstaller · VS Code · Git · StoryMaps · Raster & Vector Analysis</p>
-          </div>
-        </div>
-      </section>
+/* ======= TIMELINE ======= */
+.timeline{position:relative}
+.timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.t{position:relative;padding-left:28px;margin:18px 0}
+.t:before{content:"";position:absolute;left:4px;top:.5rem;width:14px;height:14px;background:var(--bg);border:2px solid var(--brand);border-radius:999px}
+.t h3{margin:0 0 4px}
+.t p{margin:0 0 6px;color:var(--muted)}
 
-      <!-- CONTACT -->
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="grid">
-          <div class="card col-12">
-            <p>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">linkedin.com/in/frankiecol</a></p>
-            <p>GitHub: <a href="https://github.com/frankiecolunga" target="_blank" rel="noopener">github.com/frankiecolunga</a></p>
-          </div>
-        </div>
-      </section>
 
-      <footer class="foot">© <span id="y"></span> Frankie Colunga · Built with HTML/CSS · Hosted on GitHub Pages</footer>
-    </main>
-  </div>
+/* ======= FOOTER ======= */
+.foot{color:#6b7280;text-align:center;font-size:13px;padding:22px 0}
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
+
+/* ======= ACCESSIBILITY / MOTION ======= */
+:focus-visible{outline:3px solid color-mix(in srgb, var(--brand) 60%, white);outline-offset:3px;border-radius:10px}
+@media (prefers-reduced-motion: no-preference){
+.hero h1,.case,.metric{transition:transform .18s ease, box-shadow .18s ease}
+.case:hover{transform:translateY(-2px)}
 </html>

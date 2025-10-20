@@ -1,40 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Frankie Colunga · Software Developer & GIS</title>
-<meta name="description" content="Portfolio of Frankie Colunga — Software Developer & GIS Analyst skilled in Python, Java, SQL, and ArcGIS Pro. Creator of the MMPK File Checker and spatial analysis tools." />
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#ffffff;--panel:#f8f9fa;--ink:#111111;--muted:#444;--brand:#0073e6;--brand-ink:#ffffff;--card:#ffffff;--shadow:rgba(0,0,0,.1)}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1000px;margin:0 auto;padding:28px}
-.nav{position:sticky;top:0;background:var(--panel);border-bottom:1px solid #ddd;z-index:10}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 28px}
-.brand{font-weight:800;letter-spacing:.25px}
-.nav-links{display:flex;gap:18px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;box-shadow:0 4px 10px var(--shadow);transition:transform .12s ease,box-shadow .12s ease}
-.btn:hover{transform:translateY(-1px);box-shadow:0 6px 14px var(--shadow)}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:28px}
-.hero h1{font-size:44px;line-height:1.08;margin:0 0 10px}
-.hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
-.tag{display:inline-block;border:1px solid #ccc;color:#555;padding:6px 10px;border-radius:999px;font-size:12px;margin-right:10px}
-.panel{background:var(--panel);border:1px solid #e6e6e6;border-radius:20px;padding:22px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-.col-6{grid-column:span 6}.col-12{grid-column:span 12}
-.card{background:var(--card);border:1px solid #e0e0e0;border-radius:18px;padding:18px;box-shadow:0 4px 10px var(--shadow)}
-.card h3{margin:0 0 6px;font-size:18px}
-.card p{margin:0;color:var(--muted)}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{background:#f0f0f0;color:#333;border-radius:999px;padding:6px 10px;font-size:12px}
-.section{margin:44px 0 18px}.section h2{margin:0 0 10px;font-size:24px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frankie Colunga · Software Developer & GIS</title>
+  <meta name="description" content="Portfolio of Frankie Colunga — Software Developer & GIS Analyst skilled in Python, Java, SQL, and ArcGIS Pro. Creator of the MMPK File Checker and spatial analysis tools." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --panel: #f8f9fa;
+      --ink: #111111;
+      --muted: #444444;
+      --brand: #0073e6;
+      --brand-ink: #ffffff;
+      --card: #ffffff;
+      --shadow: rgba(0,0,0,.1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 28px; }
+    .nav { position: sticky; top: 0; background: var(--panel); border-bottom: 1px solid #ddd; z-index: 10; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 28px; }
+    .brand { font-weight: 800; letter-spacing: .25px; }
+    .nav-links { display: flex; gap: 18px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--brand); color: var(--brand-ink);
+      padding: 10px 14px; border-radius: 12px; font-weight: 700;
+      border: 0; box-shadow: 0 4px 10px var(--shadow);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px var(--shadow); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; margin-top: 28px; }
+    .hero h1 { font-size: 44px; line-height: 1.08; margin: 0 0 10px; }
+    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 18px; }
+
+    .tag {
+      display: inline-block; border: 1px solid #ccc; color: #555;
+      padding: 6px 10px; border-radius: 999px; font-size: 12px; margin-right: 10px;
+    }
+
+    .panel { background: var(--panel); border: 1px solid #e6e6e6; border-radius: 20px; padding: 22px; }
+    .grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 18px; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #e0e0e0;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip { background: #f0f0f0; color: #333; border-radius: 999px; padding: 6px 10px; font-size: 12px; }
+
+    .section { margin: 44px 0 18px; }
+    .section h2 { margin: 0 0 10px; font-size: 24px; }
+    .footer { margin: 40px 0 24px; color: #777; text-align: center; font-size: 13px; }
+
+    @media(max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .col-6 { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Frankie Colunga</div>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="mailto:colungafrankie@gmail.com">Email me</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <span class="tag">Software Developer · GIS</span>
+      <h1>Building tools where <span style="color:var(--brand)">code</span> meets <span style="color:var(--brand)">maps</span>.</h1>
+      <p>Senior at the University of Redlands (’26) double-majoring in Computer Science & GIS. Experienced with Python, Java, SQL, and ArcGIS Pro. Interned at Motorola Solutions and TDS Telecom.</p>
+      <div class="links">
+        <a class="btn" href="#projects">View projects</a>
+        <a class="tag" href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="tag" href="https://github.com/frankiecolunga" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Technical Projects</h2>
+    <div class="grid">
+      <article class="card col-6">
+        <h3>MMPK File Checker (Summer 2025)</h3>
+        <p>Built a GUI application to verify <code>.mmpk</code> files using zip parsing logic and drag-and-drop support. Converted into a distributable <code>.exe</code> with a custom icon for internal and customer use. Approved by Motorola Product and Engineering teams to prevent invalid file issues and improve deployment efficiency.</p>
+        <div class="meta"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">PyInstaller</span></div>
+      </article>
+
+      <article class="card col-6">
+        <h3>Controllable Objects Simulation (Fall 2024)</h3>
+        <p>Developed an interactive Java program simulating four objects (A–D), one controllable via arrow keys and switchable with the Tab key. Demonstrated real-time movement, object state management, and event-driven input handling.</p>
+        <div class="meta"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Event Handling</span></div>
+      </article>
+
+      <article class="card col-6">
+        <h3>Sky Viewing Area Ranking (Spring 2025)</h3>
+        <p>Ranked optimal sky-viewing areas by combining light pollution and air quality data through weighted overlay analysis. Used proximity tools to connect high-ranked locations to nearby parks for accessibility across the U.S.</p>
+        <div class="meta"><span class="chip">ArcGIS Pro</span><span class="chip">Raster Analysis</span><span class="chip">Weighted Overlay</span></div>
+      </article>
+
+      <article class="card col-6">
+        <h3>Storm Basin Proposal (Spring 2025)</h3>
+        <p>Partnered with CASC Engineering to design a storm drain basin using ArcGIS Pro and field-collected infiltration and soil data. Delivered ArcGIS maps supporting infrastructure design and spatial planning.</p>
+        <div class="meta"><span class="chip">ArcGIS Pro</span><span class="chip">Field Sampling</span><span class="chip">Cartography</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="card col-12">
+        <h3>Motorola Solutions — GIS Upgrade Operations Intern</h3>
+        <p class="muted">May–Aug 2025 · Remote/Hybrid</p>
+        <ul>
+          <li>Supported system upgrades and updated map datasets for CallWorks customers.</li>
+          <li>Built a Python desktop tool to validate MMPKs, reducing deployment risk.</li>
+          <li>Collaborated across teams; documented reproducible workflows.</li>
+        </ul>
+      </div>
+      <div class="card col-12">
+        <h3>TDS Telecom — Data Analyst & GIS Intern</h3>
+        <p class="muted">Sept 2025–Present · Remote</p>
+        <ul>
+          <li>Organized and analyzed internal datasets with Excel and ArcGIS Online.</li>
+          <li>Automated data checks and created simple dashboards/maps.</li>
+          <li>Partnered with stakeholders to deliver actionable reports.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card col-6">
+        <h3>Languages & CS</h3>
+        <p>Python · Java · SQL · JavaScript (basic) · OOP · Data Structures · DB Design · CLI</p>
+      </div>
+      <div class="card col-6">
+        <h3>Tools & GIS</h3>
+        <p>ArcGIS Pro/AGOL · Tkinter · PyInstaller · VS Code · Git · StoryMaps · Raster & Vector Analysis</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">linkedin.com/in/frankiecol</a></p>
+      <p>GitHub: <a href="https://github.com/frankiecolunga" target="_blank" rel="noopener">github.com/frankiecolunga</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">© <span id="y"></span> Frankie Colunga · Built with HTML/CSS · Hosted on GitHub Pages</footer>
+</main>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>.section{margin:44px 0 18px}.section h2{margin:0 0 10px;font-size:24px}
 .footer{margin:40px 0 24px;color:#777;text-align:center;font-size:13px}
 @media(max-width:860px){.hero{grid-template-columns:1fr}.col-6{grid-column:span 12}}
 </style>

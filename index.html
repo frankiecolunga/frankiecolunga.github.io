@@ -116,6 +116,15 @@
     footer{ padding: 28px 0 48px; color: var(--ink-soft); border-top:1px solid var(--muted); margin-top: 40px; background:#fff; }
 
     @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
+      /* PROJECT ROW LAYOUT (side‑by‑side with preview) */
+    .projects-list{ display:grid; gap:22px; }
+    .project-row{ display:grid; grid-template-columns: 1.05fr 1fr; gap:18px; align-items:stretch; }
+    @media (max-width: 900px){ .project-row{ grid-template-columns:1fr; } }
+    .project-text .card{ height:100%; }
+    .project-media .preview-card{ height:100%; display:flex; flex-direction:column; }
+    .project-media .preview-iframe{ flex:1; width:100%; aspect-ratio:16/10; border:0; border-radius:12px; background:#e2e8f0; }
+    .project-media .tagline{ margin-top:8px; color: var(--ink-soft); }
+
   </style>
 </head>
 <body>
@@ -169,82 +178,90 @@
     <div class="container">
       <div class="section-head">
         <h2>Selected Projects</h2>
-        <p>Shipped items that improve workflows.</p>
+        <p>One-by-one, each with a live preview.</p>
       </div>
 
-      <div class="grid cols-3">
-        <!-- Project 1: MMPK Checker -->
-        <article class="card">
-          <div class="card-cover">MMPK File Checker</div>
-          <h3>Mobile Map Package (MMPK) Checker</h3>
-          <p>Python desktop utility (Tkinter) that validates MMPKs before deployment: schema checks, missing layers, and filename hygiene for field reliability.</p>
-          <div>
-            <a class="pill" href="#" title="Private work code not published">Private code</a>
-            <a class="pill" href="#contact">What I can demo</a>
-            <span class="pill">Python</span>
-            <span class="pill">Tkinter</span>
+      <div class="projects-list">
+        <!-- Row 1: MMPK Checker (private code, no live app) -->
+        <div class="project-row">
+          <article class="card project-text">
+            <div class="card-cover" style="height:120px;">MMPK File Checker</div>
+            <h3>Mobile Map Package (MMPK) Checker</h3>
+            <p>Python desktop utility (Tkinter) that validates MMPKs before deployment: schema checks, missing layers, and filename hygiene for field reliability.</p>
+            <div>
+              <a class="pill" href="#" title="Private work code not published">Private code</a>
+              <a class="pill" href="#contact">What I can demo</a>
+              <span class="pill">Python</span>
+              <span class="pill">Tkinter</span>
+            </div>
+          </article>
+          <div class="project-media">
+            <div class="preview-card">
+              <div class="preview-iframe" title="Screenshot placeholder" style="display:flex; align-items:center; justify-content:center; font-weight:600; color:#334155;">Add a screenshot or short GIF of the tool here.</div>
+              <div class="tagline">Tip: replace this with a static PNG/GIF showing drag‑and‑drop validation.</div>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Project 2: StoryMap (embed below) -->
-        <article class="card">
-          <div class="card-cover">StoryMap · Night Skies</div>
-          <h3>Sky Viewing Area Ranking</h3>
-          <p>Weighted overlay of light pollution (70%) vs. air quality (30%) to rank SoCal sky viewing spots; linked to park access and travel time.</p>
-          <div>
-            <a class="pill" href="#storymap" title="Jump to embedded StoryMap">View embed</a>
-            <span class="pill">Overlay</span>
-            <span class="pill">ArcGIS Online</span>
+        <!-- Row 2: ArcGIS Web App -->
+        <div class="project-row">
+          <article class="card project-text">
+            <div class="card-cover" style="height:120px;">ArcGIS Web App</div>
+            <h3>Emergency Response Layers</h3>
+            <p>Web App showing operational layers with clean symbology and popups for fast scanning. Built for non‑GIS stakeholders.</p>
+            <div>
+              <a class="pill" href="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193" target="_blank" rel="noopener">Open app</a>
+              <span class="pill">AGOL</span>
+              <span class="pill">UX for Ops</span>
+            </div>
+          </article>
+          <div class="project-media">
+            <div class="preview-card">
+              <iframe class="preview-iframe" title="ArcGIS Web App" src="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193"></iframe>
+              <div class="tagline">Embedded public preview of the Web App Viewer.</div>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Project 3: Web App -->
-        <article class="card">
-          <div class="card-cover">ArcGIS Web App</div>
-          <h3>Emergency Response Layers</h3>
-          <p>Web App showing operational layers with clean symbology and popups for fast scanning. Built for non‑GIS stakeholders.</p>
-          <div>
-            <a class="pill" href="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193" target="_blank" rel="noopener">Open app</a>
-            <span class="pill">AGOL</span>
-            <span class="pill">UX for Ops</span>
+        <!-- Row 3: StoryMap -->
+        <div class="project-row">
+          <article class="card project-text">
+            <div class="card-cover" style="height:120px;">StoryMap · Night Skies</div>
+            <h3>Sky Viewing Area Ranking</h3>
+            <p>Weighted overlay of light pollution (70%) vs. air quality (30%) to rank SoCal sky viewing spots; linked to park access and travel time.</p>
+            <div>
+              <a class="pill" href="#storymap" title="Jump to embedded StoryMap">View embed</a>
+              <span class="pill">Overlay</span>
+              <span class="pill">ArcGIS Online</span>
+            </div>
+          </article>
+          <div class="project-media">
+            <div class="preview-card">
+              <iframe class="preview-iframe" title="StoryMap" src="https://storymaps.arcgis.com/stories/00000000000000000000000000000000"></iframe>
+              <div class="tagline">Replace the URL with your real StoryMap link.</div>
+            </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Project 4: Java OOP -->
-        <article class="card">
-          <div class="card-cover">Java · Simulation</div>
-          <h3>Controllable Objects Simulation</h3>
-          <p>Java app with swappable control (Tab) between moving objects A–D; explores input handling, state, and clean OOP design.</p>
-          <div>
-            <a class="pill" href="#" title="Add repo link when public">GitHub</a>
-            <span class="pill">Java</span>
-            <span class="pill">OOP</span>
+        <!-- Row 4: Java OOP -->
+        <div class="project-row">
+          <article class="card project-text">
+            <div class="card-cover" style="height:120px;">Java · Simulation</div>
+            <h3>Controllable Objects Simulation</h3>
+            <p>Java app with swappable control (Tab) between moving objects A–D; explores input handling, state, and clean OOP design.</p>
+            <div>
+              <a class="pill" href="#" title="Add repo link when public">GitHub</a>
+              <span class="pill">Java</span>
+              <span class="pill">OOP</span>
+            </div>
+          </article>
+          <div class="project-media">
+            <div class="preview-card">
+              <div class="preview-iframe" style="display:flex; align-items:center; justify-content:center; font-weight:600; color:#334155;">Add a short screen recording GIF here.</div>
+              <div class="tagline">Tip: export a 10–20s GIF of the simulation.</div>
+            </div>
           </div>
-        </article>
-
-        <!-- Project 5: Campus DB -->
-        <article class="card">
-          <div class="card-cover">DB · SQL</div>
-          <h3>Campus Geodatabase</h3>
-          <p>Schema + feature classes (points, lines, polygons) with referential integrity and indices for performant querying and editing.</p>
-          <div>
-            <span class="pill">ArcGIS Pro</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Data Modeling</span>
-          </div>
-        </article>
-
-        <!-- Project 6: ArcPy utility -->
-        <article class="card">
-          <div class="card-cover">Desktop · Python</div>
-          <h3>Batch Raster Clipper</h3>
-          <p>Small ArcPy utility to clip and reproject rasters to a standard AOI + CRS. Speeds up lab and internship workflows.</p>
-          <div>
-            <a class="pill" href="#" title="Add repo link when public">GitHub</a>
-            <span class="pill">ArcPy</span>
-            <span class="pill">Automation</span>
-          </div>
-        </article>
+        </div>
       </div>
     </div>
   </section>

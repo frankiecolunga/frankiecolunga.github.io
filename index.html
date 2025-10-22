@@ -5,380 +5,331 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Frankie Colunga · Software Developer & GIS</title>
   <meta name="description" content="Software developer & GIS analyst building reliable desktop tools and geospatial workflows. Python, Java, SQL, ArcGIS Pro." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
-    /* =====================
-       LIGHT BLUE THEME
-       ===================== */
+    /* ======= LIGHT BLUE THEME ======= */
     :root {
       --bg: #ffffff;
-      --ink: #0f172a;       /* slate-900 */
-      --ink-soft: #475569;  /* slate-600 */
-      --muted: #e2e8f0;     /* slate-200 */
-      --brand: #2563eb;     /* blue-600 */
-      --brand-2: #38bdf8;   /* sky-400 */
-      --bg-soft: #f8fafc;   /* slate-50 */
-      --ring: rgba(37, 99, 235, .18);
-      --radius: 16px;
-      --radius-sm: 12px;
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --line: #e5eaf5;
+      --brand: #2563eb;
+      --brand-ink: #ffffff;
+      --soft: #f3f6fb;
+      --card: #ffffff;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      --radius: 18px;
       --radius-lg: 24px;
-      --shadow: 0 10px 30px rgba(2,6,23,.07);
-      --maxw: 1150px;
+      --max: 1120px;
     }
 
     *{box-sizing:border-box}
-    html, body { margin:0; padding:0; }
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(1200px 700px at 80% -10%, rgba(37,99,235,.08), transparent 60%),
-        radial-gradient(900px 600px at -10% 10%, rgba(56,189,248,.10), transparent 65%),
-        var(--bg);
-      line-height:1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
     }
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    img{ max-width:100%; display:block; }
-    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--max);margin:0 auto;padding:28px}
+    .overline{letter-spacing:.15em;text-transform:uppercase;font-size:12px;color:#64748b}
 
-    /* NAV */
-    header{
-      position: sticky; top:0; z-index:40;
-      background: rgba(255,255,255,.85);
-      backdrop-filter: saturate(1.2) blur(10px);
-      border-bottom:1px solid var(--muted);
+    /* ======= HEADER ======= */
+    .hdr{position:sticky;top:0;z-index:40;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);background-color:rgba(255,255,255,0.95);}
+    .hdr-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--max);margin:0 auto}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, var(--brand), #60a5fa);box-shadow:var(--shadow)}
+    .name{font-weight:800;letter-spacing:.2px}
+    .nav{display:flex;align-items:center;gap:18px}
+    .ghost{padding:8px 12px;border-radius:12px;border:1px solid var(--line);color:#1e293b;background:var(--soft)}
+    .ghost:hover{background:#e0e7ff}
+    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
+    .toggle{border:1px solid var(--line);background:transparent;border-radius:12px;padding:8px 10px}
+
+    /* ======= HERO ======= */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:22px}
+    .hero h1{font-size:48px;line-height:1.02;margin:0 0 10px;letter-spacing:-.3px;color:var(--ink)}
+    .hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
+    .badge{background:var(--soft);border:1px solid var(--line);color:#334155;padding:6px 10px;border-radius:999px;font-size:12px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+    .metric{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center;box-shadow:var(--shadow)}
+    .metric .v{font-weight:800;font-size:22px;color:var(--brand)}
+    .metric .l{font-size:12px;color:var(--muted)}
+    .hero-card{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px}
+
+    /* ======= SECTION ======= */
+    .section{margin:42px 0 18px}
+    .section>header{display:flex;align-items:end;justify-content:space-between;margin:0 0 12px}
+    .section h2{margin:0;font-size:26px;color:var(--ink)}
+    .sub{color:var(--muted)}
+
+    /* ======= PROJECTS ======= */
+    .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;background:var(--card);box-shadow:var(--shadow)}
+    .case + .case{margin-top:16px}
+    .case h3{margin:0 0 6px;color:var(--brand)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:#e0e7ff;border:1px solid var(--line);color:#1e3a8a;padding:6px 10px;border-radius:999px;font-size:12px}
+    .figure{aspect-ratio:16/10;border:1px dashed var(--line);border-radius:16px;background:#f8fafc;display:flex;align-items:center;justify-content:center;color:#94a3b8}
+    .impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+    .chip{display:flex;flex-direction:column;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px}
+    .chip .big{font-weight:800;color:var(--brand)}
+
+    /* ======= TIMELINE ======= */
+    .timeline{position:relative}
+    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+    .t{position:relative;padding-left:28px;margin:18px 0}
+    .t:before{content:"";position:absolute;left:4px;top:.5rem;width:14px;height:14px;background:var(--bg);border:2px solid var(--brand);border-radius:999px}
+    .t h3{margin:0 0 4px;color:var(--brand)}
+    .t p{margin:0 0 6px;color:var(--muted)}
+
+    /* ======= FOOTER ======= */
+    .foot{color:#6b7280;text-align:center;font-size:13px;padding:22px 0}
+
+    /* ======= MOBILE ======= */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .case{grid-template-columns:1fr}
+      .metrics{grid-template-columns:repeat(3,1fr)}
     }
-    .nav{ display:flex; align-items:center; justify-content:space-between; height:68px; }
-    .brand{ display:flex; align-items:center; gap:10px; font-weight:800; color: var(--ink); letter-spacing:.2px; }
-    .brand-dot{ width:10px; height:10px; border-radius:50%; background: linear-gradient(145deg, var(--brand), var(--brand-2)); box-shadow: 0 0 0 4px rgba(37,99,235,.16); }
-    .nav-links{ display:flex; align-items:center; gap:22px; font-weight:600; }
-    .btn{ padding:10px 16px; border-radius:999px; border:1px solid var(--muted); background:#ffffff; color: var(--ink); box-shadow: var(--shadow); text-decoration:none; }
-    .btn:hover{ border-color:#cbd5e1; transform: translateY(-1px); transition: all .2s ease; text-decoration:none; }
-    .btn-primary{ background: linear-gradient(180deg, #3b82f6, #2563eb); color:#fff; border-color: transparent; }
-
-    /* HERO */
-    .hero{ padding: 84px 0 40px; }
-    .hero-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:36px; align-items:center; }
-    @media (max-width: 900px){ .hero-grid{ grid-template-columns:1fr; } }
-    .kicker{ color: var(--brand); font-weight:800; letter-spacing:.2em; text-transform:uppercase; font-size:12px; }
-    h1{ font-size: clamp(36px, 6vw, 56px); line-height:1.05; margin:10px 0 16px; font-weight:800; color:#0b1220; }
-    .h1-sub{ font-family: "Instrument Serif", serif; font-style: italic; font-weight:400; font-size: clamp(16px, 2.6vw, 22px); color: var(--ink-soft); }
-    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
-    .chip{ display:inline-flex; padding:8px 12px; border:1px solid var(--muted); border-radius:999px; font-size:12px; color:#334155; background: #f1f5f9; margin-right:8px; }
-
-    .preview-card{ border:1px solid var(--muted); background: var(--bg-soft); border-radius: var(--radius-lg); padding: 18px; box-shadow: var(--shadow); }
-    .preview-iframe{ width:100%; aspect-ratio: 16/10; border:0; border-radius: 12px; background:#e2e8f0; }
-    .tagline{ color: var(--ink-soft); font-size:14px; margin-top:8px; }
-
-    /* SECTIONS */
-    section{ padding: 64px 0; }
-    .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:20px; margin-bottom:22px; }
-    .section-head h2{ font-size: clamp(24px, 3.4vw, 34px); margin:0; color:#0b1220; }
-    .section-head p{ color: var(--ink-soft); margin:0; }
-
-    /* GRID + CARDS */
-    .grid{ display:grid; gap:18px; }
-    @media (min-width: 860px){ .grid.cols-3{ grid-template-columns: repeat(3, 1fr); } }
-
-    .card{ border:1px solid var(--muted); background:#fff; border-radius: var(--radius); padding:18px; position:relative; overflow:hidden; box-shadow: var(--shadow); transition: transform .2s ease; }
-    .card:hover{ transform: translateY(-3px); }
-    .card-cover{ height: 170px; border-radius: 12px; background: linear-gradient(145deg, rgba(37,99,235,.12), rgba(56,189,248,.12)); display:flex; align-items:center; justify-content:center; font-weight:700; color:#0b1220; letter-spacing:.2px; }
-    .card h3{ margin:14px 0 8px; font-size:18px; color:#0b1220; }
-    .card p{ color: var(--ink-soft); font-size:14px; margin:0 0 12px; }
-    .pill{ display:inline-flex; gap:8px; align-items:center; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--muted); background:#f8fafc; color:#0f172a; margin-right:8px; }
-
-    /* TIMELINE */
-    .timeline{ border-left: 2px solid var(--muted); padding-left:18px; margin-left:6px; }
-    .t-item{ margin-bottom:18px; position:relative; }
-    .t-item::before{ content:""; position:absolute; left:-11px; top:5px; width:10px; height:10px; border-radius:50%; background: var(--brand); box-shadow: 0 0 0 5px var(--ring); }
-    .t-job{ display:flex; justify-content:space-between; gap:10px; }
-    .t-job strong{ font-weight:700; color:#0b1220; }
-    .t-meta{ color: var(--ink-soft); font-size: 13px; }
-
-    /* SKILLS */
-    .skills{ display:grid; gap:12px; grid-template-columns: repeat(2, 1fr); }
-    @media (min-width: 900px){ .skills{ grid-template-columns: repeat(4, 1fr); } }
-    .skill{ padding:14px; border-radius: var(--radius-sm); border:1px solid var(--muted); background: #fff; display:flex; align-items:center; justify-content:space-between; }
-    .skill span{ color: var(--ink-soft); font-size:13px; }
-
-    /* CONTACT + FOOTER */
-    .contact{ display:grid; grid-template-columns:1.2fr 1fr; gap:18px; }
-    @media (max-width: 860px){ .contact{ grid-template-columns:1fr; } }
-    .input{ width:100%; padding:12px 14px; border:1px solid var(--muted); border-radius: 12px; background:#fff; color: var(--ink); }
-    textarea.input{ min-height:120px; resize: vertical; }
-
-    footer{ padding: 28px 0 48px; color: var(--ink-soft); border-top:1px solid var(--muted); margin-top: 40px; background:#fff; }
-
-    @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
-      /* PROJECT ROW LAYOUT (side‑by‑side with preview) */
-    .projects-list{ display:grid; gap:22px; }
-    .project-row{ display:grid; grid-template-columns: 1.05fr 1fr; gap:18px; align-items:stretch; }
-    @media (max-width: 900px){ .project-row{ grid-template-columns:1fr; } }
-    .project-text .card{ height:100%; }
-    .project-media .preview-card{ height:100%; display:flex; flex-direction:column; }
-    .project-media .preview-iframe{ flex:1; width:100%; aspect-ratio:16/10; border:0; border-radius:12px; background:#e2e8f0; }
-    .project-media .tagline{ margin-top:8px; color: var(--ink-soft); }
-
+    @media (max-width:560px){
+      .metrics{grid-template-columns:1fr 1fr}
+    }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top">
-        <span class="brand-dot"></span>
-        <span>Frankie Colunga</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#projects" style="color:#0b1220;">Projects</a>
-        <a href="#experience" style="color:#0b1220;">Experience</a>
-        <a href="#skills" style="color:#0b1220;">Skills</a>
-        <a href="#contact" style="color:#0b1220;">Contact</a>
-        <a class="btn" href="https://github.com/FrankieCol" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/FrankieCol" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="name">Frankie Colunga</div>
+          <div style="color:#64748b;font-size:12px">Software Developer · GIS Analyst</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="ghost" href="#projects">Projects</a>
+        <a class="ghost" href="#experience">Experience</a>
+        <a class="ghost" href="#skills">Skills</a>
+        <a class="ghost" href="#contact">Contact</a>
+        <a class="cta" href="mailto:colungafrankie@gmail.com">Email me</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="top" class="hero">
-    <div class="container hero-grid">
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="intro">
       <div>
-        <div class="kicker">Software Developer · GIS</div>
-        <h1>Clean, reliable tools for data & maps.</h1>
-        <p class="h1-sub">Python, Java, SQL, and ArcGIS Pro. I build desktop utilities, tidy datasets, and clear web maps that people actually use.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">See projects</a>
-          <a class="btn" href="#contact">Contact</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+        <div class="overline" id="intro">Introduction</div>
+        <h1>Practical software for data-driven maps.</h1>
+        <p>Senior at the University of Redlands (’26) double-majoring in Computer Science & GIS. I ship Python and Java desktop tools and geospatial workflows with ArcGIS. Experience across Motorola Solutions and TDS Telecom.</p>
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">Java</span>
+          <span class="badge">SQL</span>
+          <span class="badge">ArcGIS Pro / AGOL</span>
+          <span class="badge">Tkinter</span>
+          <span class="badge">PyInstaller</span>
         </div>
-        <div style="margin-top:16px;">
-          <span class="chip">ArcGIS Pro 3.x</span>
-          <span class="chip">Tkinter Desktop Apps</span>
-          <span class="chip">Data Cleaning & SQL</span>
+        <div class="metrics">
+          <div class="metric"><div class="v">Desktop Apps</div><div class="l">Tkinter · PyInstaller</div></div>
+          <div class="metric"><div class="v">GIS Pipelines</div><div class="l">ArcGIS Pro · AGOL</div></div>
+          <div class="metric"><div class="v">Core Stack</div><div class="l">Python · Java · SQL</div></div>
         </div>
       </div>
+      <div class="hero-card">
+        <div class="overline">Highlights</div>
+        <ul style="margin:10px 0 0 18px;color:var(--muted)">
+          <li>Built a packaged .exe checker that prevents invalid MMPKs before deployment.</li>
+          <li>Java simulation showcasing OOP + event-driven input (Tab to switch control).</li>
+          <li>Weighted overlay analysis (70/30) for sky-view ranking with StoryMap output.</li>
+        </ul>
+      </div>
+    </section>
 
-      <!-- Map Embed -->
-      <div class="preview-card">
-        <iframe class="preview-iframe" title="ArcGIS Web App" src="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193"></iframe>
-        <div class="tagline">Embedded: ArcGIS Web App Viewer — public map preview.</div>
-      </div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="proj">
+      <header>
+        <div>
+          <div class="overline">Projects</div>
+          <h2 id="proj">Selected case studies</h2>
+        </div>
+      </header>
+
+      <article class="case" aria-labelledby="mmpk">
+        <div>
+          <h3 id="mmpk">MMPK File Checker (Summer 2025)</h3>
+          <p class="sub">Python desktop app to validate Esri mobile map packages before deployment. Drag-and-drop GUI, zip parsing, and schema checks; packaged into a single .exe with a custom icon for internal and customer use.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">PyInstaller</span></div>
+          <div class="impact">
+            <div class="chip"><span class="big">Risk ↓</span><span>Flags invalid files early</span></div>
+            <div class="chip"><span class="big">Friction ↓</span><span>Drag & drop UX</span></div>
+            <div class="chip"><span class="big">Packaging</span><span>Single-file .exe</span></div>
+          </div>
+        </div>
+        <div class="figure">(product screenshot placeholder)</div>
+      </article>
+
+      <article class="case" aria-labelledby="javaSim">
+        <div>
+          <h3 id="javaSim">Controllable Objects Simulation (Fall 2024)</h3>
+          <p class="sub">Interactive Java program with four objects (A–D). One object is controllable via arrow keys and switchable with Tab; others move autonomously. Demonstrates OOP structure and event-driven input.</p>
+          <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Event Handling</span></div>
+        </div>
+        <div class="figure">(demo GIF placeholder)</div>
+      </article>
+
+      <article class="case" aria-labelledby="storm">
+  <div>
+    <h3 id="storm">Storm Basin Proposal (Spring 2025)</h3>
+    <p class="sub">Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and field-collected infiltration & soil data. Delivered cartographic products supporting planning.</p>
+    <div class="tags">
+      <span class="tag">ArcGIS Pro</span>
+      <span class="tag">Field Sampling</span>
+      <span class="tag">Cartography</span>
     </div>
+  </div>
+  <div class="figure">
+    <a href="/assets/storm-drain-storyboard.pdf" target="_blank" rel="noopener">
+      <img
+        src="/assets/storm-drain-preview.png"
+        alt="Storm Drain Basin storyboard"
+        style="width:100%; height:100%; object-fit:cover; border-radius:16px; border:1px solid var(--line);"
+        loading="lazy" decoding="async"
+      />
+    </a>
+  </div>
+</article>
+
+      <div class="figure" style="padding:0; border:none; display:flex; flex-direction:column; align-items:center; gap:14px;">
+  <!-- Storyboard Preview -->
+  <a href="storm-drain-storyboard.pdf" target="_blank" rel="noopener">
+    <img src="storm-drain-preview.png" alt="Storm Drain Basin storyboard" 
+         style="width:100%; max-width:900px; border-radius:16px; border:1px solid #e5eaf5; box-shadow:0 8px 20px rgba(0,0,0,0.06);" />
+  </a>
+  <p style="color:#64748b; font-size:14px; margin:0;">
+    Click to open full storyboard (zoom & explore)
+  </p>
+</div>
+      <article class="case" aria-labelledby="sky">
+        <div>
+          <h3 id="sky">Sky Viewing Area Ranking (Spring 2025)</h3>
+          <p class="sub">Ranked optimal sky-viewing areas by combining light pollution and air quality with a 70/30 weighted overlay; linked high-scoring locations to nearby parks for access.</p>
+          <div class="tags"><span class="tag">ArcGIS Pro</span><span class="tag">Raster Analysis</span><span class="tag">Weighted Overlay</span></div>
+        </div>
+        <div class="figure" style="padding:0; border:none;">
+          <iframe 
+            src="https://storymaps.arcgis.com/stories/b6c75d46f04c44c98d8309220b7fdeaa" 
+            width="100%" height="400" 
+            frameborder="0" allowfullscreen 
+            style="border-radius:16px; border:1px solid var(--line); box-shadow:var(--shadow);">
+          </iframe>
+        </div>
+      </article>
+
+      <!-- FIXED: Storm project as a proper card -->
+      <article class="case" aria-labelledby="storm">
+        <div>
+          <h3 id="storm">Storm Basin Proposal (Spring 2025)</h3>
+          <p class="sub">Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and field-collected infiltration & soil data. Delivered cartographic products supporting planning.</p>
+          <div class="tags">
+            <span class="tag">ArcGIS Pro</span>
+            <span class="tag">Field Sampling</span>
+            <span class="tag">Cartography</span>
+          </div>
+        </div>
+        <div class="figure">
+          <a href="/assets/storm-drain-storyboard.pdf" target="_blank" rel="noopener">
+            <img
+              src="/assets/storm-drain-preview.png"
+              alt="Storm Drain Basin storyboard"
+              style="width:100%; height:100%; object-fit:cover; border-radius:16px; border:1px solid var(--line);"
+              loading="lazy" decoding="async"
+            />
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="exp">
+      <header>
+        <div>
+          <div class="overline">Experience</div>
+          <h2 id="exp">Recent roles</h2>
+        </div>
+      </header>
+      <div class="timeline">
+        <div class="t">
+          <h3>TDS Telecom — Data Analyst & GIS Intern</h3>
+          <p>Sept 2025 – Present · Remote</p>
+          <ul>
+            <li>Organize and analyze internal datasets with Excel and ArcGIS Online.</li>
+            <li>Automate data checks and create simple dashboards/maps.</li>
+            <li>Partner with stakeholders to deliver actionable reports.</li>
+          </ul>
+        </div>
+        <div class="t">
+          <h3>Motorola Solutions — GIS Upgrade Operations Intern</h3>
+          <p>May – Aug 2025 · Remote/Hybrid</p>
+          <ul>
+            <li>Supported system upgrades and updated map datasets for CallWorks customers.</li>
+            <li>Built a Python desktop tool to validate MMPKs, reducing deployment risk.</li>
+            <li>Collaborated across teams; documented reproducible workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skillsH">
+      <header>
+        <div>
+          <div class="overline">Skills</div>
+          <h2 id="skillsH">Core capabilities</h2>
+        </div>
+      </header>
+      <div class="case" style="grid-template-columns:1fr 1fr">
+        <div>
+          <h3>Languages & CS</h3>
+          <p class="sub">Python · Java · SQL · JavaScript (basic) · OOP · Data Structures · DB Design · CLI</p>
+        </div>
+        <div>
+          <h3>Tools & GIS</h3>
+          <p class="sub">ArcGIS Pro/AGOL · Tkinter · PyInstaller · VS Code · Git · StoryMaps · Raster & Vector Analysis</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contactH">
+      <header>
+        <div>
+          <div class="overline">Contact</div>
+          <h2 id="contactH">Let’s connect</h2>
+        </div>
+      </header>
+      <div class="case" style="grid-template-columns:1fr">
+        <p>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">linkedin.com/in/frankiecol</a></p>
+        <p>GitHub: <a href="https://github.com/frankiecolunga" target="_blank" rel="noopener">github.com/frankiecolunga</a></p>
+      </div>
+    </section>
+
+    <footer class="foot">© <span id="y"></span> Frankie Colunga · Built with semantic HTML/CSS · GitHub Pages</footer>
   </main>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
-        <p>One-by-one, each with a live preview.</p>
-      </div>
-
-      <div class="projects-list">
-        <!-- Row 1: MMPK Checker (private code, no live app) -->
-        <div class="project-row">
-          <article class="card project-text">
-            <div class="card-cover" style="height:120px;">MMPK File Checker</div>
-            <h3>Mobile Map Package (MMPK) Checker</h3>
-            <p>Python desktop utility (Tkinter) that validates MMPKs before deployment: schema checks, missing layers, and filename hygiene for field reliability.</p>
-            <div>
-              <a class="pill" href="#" title="Private work code not published">Private code</a>
-              <a class="pill" href="#contact">What I can demo</a>
-              <span class="pill">Python</span>
-              <span class="pill">Tkinter</span>
-            </div>
-          </article>
-          <div class="project-media">
-            <div class="preview-card">
-              <div class="preview-iframe" title="Screenshot placeholder" style="display:flex; align-items:center; justify-content:center; font-weight:600; color:#334155;">Add a screenshot or short GIF of the tool here.</div>
-              <div class="tagline">Tip: replace this with a static PNG/GIF showing drag‑and‑drop validation.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 2: ArcGIS Web App -->
-        <div class="project-row">
-          <article class="card project-text">
-            <div class="card-cover" style="height:120px;">ArcGIS Web App</div>
-            <h3>Emergency Response Layers</h3>
-            <p>Web App showing operational layers with clean symbology and popups for fast scanning. Built for non‑GIS stakeholders.</p>
-            <div>
-              <a class="pill" href="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193" target="_blank" rel="noopener">Open app</a>
-              <span class="pill">AGOL</span>
-              <span class="pill">UX for Ops</span>
-            </div>
-          </article>
-          <div class="project-media">
-            <div class="preview-card">
-              <iframe class="preview-iframe" title="ArcGIS Web App" src="https://univredlands.maps.arcgis.com/apps/webappviewer/index.html?id=de5e832e69454e2690446e0fb67eb193"></iframe>
-              <div class="tagline">Embedded public preview of the Web App Viewer.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 3: StoryMap -->
-        <div class="project-row">
-          <article class="card project-text">
-            <div class="card-cover" style="height:120px;">StoryMap · Night Skies</div>
-            <h3>Sky Viewing Area Ranking</h3>
-            <p>Weighted overlay of light pollution (70%) vs. air quality (30%) to rank SoCal sky viewing spots; linked to park access and travel time.</p>
-            <div>
-              <a class="pill" href="#storymap" title="Jump to embedded StoryMap">View embed</a>
-              <span class="pill">Overlay</span>
-              <span class="pill">ArcGIS Online</span>
-            </div>
-          </article>
-          <div class="project-media">
-            <div class="preview-card">
-              <iframe class="preview-iframe" title="StoryMap" src="https://storymaps.arcgis.com/stories/00000000000000000000000000000000"></iframe>
-              <div class="tagline">Replace the URL with your real StoryMap link.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 4: Java OOP -->
-        <div class="project-row">
-          <article class="card project-text">
-            <div class="card-cover" style="height:120px;">Java · Simulation</div>
-            <h3>Controllable Objects Simulation</h3>
-            <p>Java app with swappable control (Tab) between moving objects A–D; explores input handling, state, and clean OOP design.</p>
-            <div>
-              <a class="pill" href="#" title="Add repo link when public">GitHub</a>
-              <span class="pill">Java</span>
-              <span class="pill">OOP</span>
-            </div>
-          </article>
-          <div class="project-media">
-            <div class="preview-card">
-              <div class="preview-iframe" style="display:flex; align-items:center; justify-content:center; font-weight:600; color:#334155;">Add a short screen recording GIF here.</div>
-              <div class="tagline">Tip: export a 10–20s GIF of the simulation.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORYMAP EMBED (second preview) -->
-  <section id="storymap" aria-label="StoryMap">
-    <div class="container">
-      <div class="section-head">
-        <h2>StoryMap Embed</h2>
-        <p>Public StoryMap preview (replace the URL with yours).</p>
-      </div>
-      <div class="preview-card">
-        <!-- Replace src with your real StoryMap link -->
-        <iframe class="preview-iframe" title="StoryMap" src="https://storymaps.arcgis.com/stories/00000000000000000000000000000000"></iframe>
-        <div class="tagline">Tip: paste your real StoryMap URL in the <code>src</code> above.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-head">
-        <h2>Experience</h2>
-        <p>Hands‑on internships + customer‑facing background.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="t-item">
-          <div class="t-job"><strong>Data Analyst & GIS Intern — TDS Telecom</strong><span class="t-meta">Sep 2025 – Present · Remote</span></div>
-          <p class="t-meta">Excel + AGOL to organize internal projects; data QA, visualization, and small toolmaking.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-job"><strong>GIS Upgrade Operations Intern — Motorola Solutions</strong><span class="t-meta">May – Aug 2025</span></div>
-          <p class="t-meta">Supported upgrades, updated datasets, and built a Python MMPK validator to reduce deployment risk.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-job"><strong>Barista — Starbucks</strong><span class="t-meta">Customer‑facing</span></div>
-          <p class="t-meta">Built adaptability, teamwork, and clear communication in fast‑paced environments.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-head">
-        <h2>Skills</h2>
-        <p>Depth where it counts; breadth where it helps.</p>
-      </div>
-      <div class="skills">
-        <div class="skill"><strong>Python</strong><span>ArcPy, Tkinter, PyInstaller</span></div>
-        <div class="skill"><strong>Java</strong><span>OOP, simulations</span></div>
-        <div class="skill"><strong>SQL</strong><span>schema, joins, indexing</span></div>
-        <div class="skill"><strong>GIS</strong><span>ArcGIS Pro/Online, StoryMaps</span></div>
-        <div class="skill"><strong>Web</strong><span>AGOL apps, embeds</span></div>
-        <div class="skill"><strong>Data</strong><span>cleaning, QA, charts</span></div>
-        <div class="skill"><strong>Design</strong><span>UX for non‑GIS users</span></div>
-        <div class="skill"><strong>Tools</strong><span>Git, VS Code, Eclipse</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Reach out for roles, internships, or collabs.</p>
-      </div>
-      <div class="contact">
-        <div class="card">
-          <h3 style="margin:0 0 10px;">Email</h3>
-          <p class="t-meta">colungafrankie@gmail.com</p>
-          <div style="display:flex; gap:10px; margin-top:12px;">
-            <a class="btn" href="mailto:colungafrankie@gmail.com">Write email</a>
-            <a class="btn" href="https://www.linkedin.com/in/FrankieCol" target="_blank" rel="noopener">Message on LinkedIn</a>
-          </div>
-        </div>
-        <form class="card" onsubmit="event.preventDefault(); alert('Thanks! Your message was not sent because this is a static demo. Hook this form to Formspree or Netlify Forms.');">
-          <div style="display:grid; gap:10px; grid-template-columns:1fr 1fr;">
-            <input class="input" placeholder="Your name" required />
-            <input class="input" type="email" placeholder="Email" required />
-          </div>
-          <textarea class="input" placeholder="Message" style="margin-top:10px;"></textarea>
-          <div style="display:flex; gap:10px; margin-top:10px;">
-            <button class="btn btn-primary" type="submit">Send</button>
-            <a class="btn" href="#top">Back to top</a>
-          </div>
-          <p class="t-meta" style="margin-top:10px;">Tip: connect this form to Formspree or Netlify Forms for production.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-      <div>© <span id="yr"></span> Frankie Colunga. Built with clean HTML/CSS.</div>
-      <div style="display:flex; gap:10px;">
-        <a class="pill" href="https://github.com/FrankieCol" target="_blank" rel="noopener">GitHub</a>
-        <a class="pill" href="https://www.linkedin.com/in/FrankieCol" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="pill" href="#projects">Projects</a>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-    // Smooth scroll
-    const links = document.querySelectorAll('a[href^="#"]');
-    for (const a of links){
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    }
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

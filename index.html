@@ -3,355 +3,654 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Frankie Colunga · Software Developer & GIS</title>
-  <meta name="description" content="Software developer & GIS analyst" />
+  <title>Frankie Colunga · GIS & Software Engineering</title>
+  <meta name="description" content="GIS analyst and software engineer based in San Bernardino, CA." />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ======= LIGHT BLUE THEME ======= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #ffffff;
       --ink: #0f172a;
-      --muted: #4b5563;
-      --line: #e5eaf5;
-      --brand: #2563eb;
-      --brand-ink: #ffffff;
-      --soft: #f3f6fb;
-      --card: #ffffff;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      --radius: 18px;
-      --radius-lg: 24px;
-      --max: 1120px;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --soft: #f8fafc;
+      --teal-bg: #E1F5EE;
+      --teal-border: #5DCAA5;
+      --teal-text: #085041;
+      --teal-mid: #0F6E56;
+      --teal-accent: #1D9E75;
+      --teal-badge: #9FE1CB;
+      --teal-badge-text: #04342C;
+      --purple-bg: #EEEDFE;
+      --purple-border: #AFA9EC;
+      --purple-text: #3C3489;
+      --purple-dark: #534AB7;
+      --gis-bg: #E1F5EE;
+      --gis-text: #085041;
+      --max: 860px;
+      --radius: 12px;
+      --radius-lg: 16px;
     }
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    html, body {
+      background: #ffffff;
+      color: var(--ink);
+      font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
     }
-    img{max-width:100%;display:block}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--max);margin:0 auto;padding:28px}
-    .overline{letter-spacing:.15em;text-transform:uppercase;font-size:12px;color:#64748b}
 
-    /* ======= HEADER ======= */
-    .hdr{position:sticky;top:0;z-index:40;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);background-color:rgba(255,255,255,0.95);}
-    .hdr-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--max);margin:0 auto}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg, var(--brand), #60a5fa);box-shadow:var(--shadow)}
-    .name{font-weight:800;letter-spacing:.2px}
-    .nav{display:flex;align-items:center;gap:18px}
-    .ghost{padding:8px 12px;border-radius:12px;border:1px solid var(--line);color:#1e293b;background:var(--soft)}
-    .ghost:hover{background:#e0e7ff}
-    .cta{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);padding:10px 14px;border-radius:12px;font-weight:700;border:0;box-shadow:var(--shadow)}
-    .toggle{border:1px solid var(--line);background:transparent;border-radius:12px;padding:8px 10px}
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
 
-    /* ======= HERO ======= */
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:22px}
-    .hero h1{font-size:48px;line-height:1.02;margin:0 0 10px;letter-spacing:-.3px;color:var(--ink)}
-    .hero p{margin:0 0 16px;color:var(--muted);font-size:18px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
-    .badge{background:var(--soft);border:1px solid var(--line);color:#334155;padding:6px 10px;border-radius:999px;font-size:12px}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
-    .metric{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center;box-shadow:var(--shadow)}
-    .metric .v{font-weight:800;font-size:22px;color:var(--brand)}
-    .metric .l{font-size:12px;color:var(--muted)}
-    .hero-card{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px}
-
-    /* ======= SECTION ======= */
-    .section{margin:42px 0 18px}
-    .section>header{display:flex;align-items:end;justify-content:space-between;margin:0 0 12px}
-    .section h2{margin:0;font-size:26px;color:var(--ink)}
-    .sub{color:var(--muted)}
-
-    /* ======= PROJECTS ======= */
-    .case{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start;border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;background:var(--card);box-shadow:var(--shadow)}
-    .case + .case{margin-top:16px}
-    .case h3{margin:0 0 6px;color:var(--brand)}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .tag{background:#e0e7ff;border:1px solid var(--line);color:#1e3a8a;padding:6px 10px;border-radius:999px;font-size:12px}
-    .figure{aspect-ratio:16/10;border:1px dashed var(--line);border-radius:16px;background:#f8fafc;display:flex;align-items:center;justify-content:center;color:#94a3b8}
-    .impact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-    .chip{display:flex;flex-direction:column;gap:2px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px}
-    .chip .big{font-weight:800;color:var(--brand)}
-
-    /* ======= TIMELINE ======= */
-    .timeline{position:relative}
-    .timeline:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
-    .t{position:relative;padding-left:28px;margin:18px 0}
-    .t:before{content:"";position:absolute;left:4px;top:.5rem;width:14px;height:14px;background:var(--bg);border:2px solid var(--brand);border-radius:999px}
-    .t h3{margin:0 0 4px;color:var(--brand)}
-    .t p{margin:0 0 6px;color:var(--muted)}
-
-    /* ======= FOOTER ======= */
-    .foot{color:#6b7280;text-align:center;font-size:13px;padding:22px 0}
-
-    /* ======= MOBILE ======= */
-    @media (max-width:960px){
-      .hero{grid-template-columns:1fr}
-      .case{grid-template-columns:1fr}
-      .metrics{grid-template-columns:repeat(3,1fr)}
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
-    @media (max-width:560px){
-      .metrics{grid-template-columns:1fr 1fr}
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--ink);
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      transition: background 0.15s;
+    }
+    .nav-links a:hover { background: #e0e7ff; text-decoration: none; }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff !important;
+      background: #2563eb !important;
+      border-color: #2563eb !important;
+      padding: 7px 14px;
+      border-radius: 8px;
+    }
+    .nav-cta:hover { background: #1d4ed8 !important; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px 4rem;
+    }
+
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 64px;
+      line-height: 1.02;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--muted);
+    }
+    .hero-tagline {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 1.75rem;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .htag {
+      font-size: 12px;
+      font-family: 'DM Mono', monospace;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      color: var(--muted);
+      background: var(--soft);
+    }
+    .htag-teal {
+      background: var(--teal-bg);
+      color: var(--teal-text);
+      border-color: var(--teal-border);
+    }
+    .htag-purple {
+      background: var(--purple-bg);
+      color: var(--purple-text);
+      border-color: var(--purple-border);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .edu-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+    .edu-card.upcoming {
+      border-color: var(--teal-border);
+      background: var(--teal-bg);
+    }
+    .edu-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: var(--teal-badge);
+      color: var(--teal-badge-text);
+      margin-bottom: 10px;
+    }
+    .edu-school {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .edu-card.upcoming .edu-school { color: var(--teal-text); }
+    .edu-degree {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .edu-card.upcoming .edu-degree { color: var(--teal-mid); }
+    .edu-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    .edu-card.upcoming .edu-meta { color: var(--teal-accent); }
+
+    /* ── PROJECTS ── */
+    .proj-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .proj-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .proj-cat {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .proj-cat.sw { color: var(--purple-dark); }
+    .proj-cat.gis { color: var(--teal-mid); }
+    .proj-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .proj-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .proj-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 3px;
+      background: var(--soft);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .chip.sw { background: var(--purple-bg); color: var(--purple-text); border-color: var(--purple-border); }
+    .chip.gis { background: var(--gis-bg); color: var(--gis-text); border-color: var(--teal-border); }
+    .proj-embed {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      margin-top: 4px;
+    }
+    .proj-embed iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+    .proj-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .exp-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .exp-co {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .exp-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .skill-group {
+      background: var(--soft);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--line);
+    }
+    .skill-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .skill-item { font-size: 13px; color: var(--ink); }
+
+    /* ── CONTACT ── */
+    .contact-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      transition: color 0.15s;
+    }
+    .contact-link:hover { color: var(--ink); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    .foot {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      padding: 2rem 0 0;
+      border-top: 1px solid var(--line);
+      margin-top: 1rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero-name { font-size: 42px; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="hdr">
-    <div class="hdr-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div class="name">Frankie Colunga</div>
-          <div style="color:#64748b;font-size:12px">Software Developer · GIS Analyst</div>
-        </div>
+
+  <nav class="nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <div class="nav-name">Frankie Colunga</div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="mailto:colungafrankie@gmail.com">Email me</a>
       </div>
-      <nav class="nav">
-        <a class="ghost" href="#projects">Projects</a>
-        <a class="ghost" href="#experience">Experience</a>
-        <a class="ghost" href="#skills">Skills</a>
-        <a class="ghost" href="#contact">Contact</a>
-        <a class="cta" href="mailto:colungafrankie@gmail.com">Email me</a>
-      </nav>
     </div>
-  </header>
+  </nav>
 
   <main class="container">
+
     <!-- HERO -->
-    <section class="hero" aria-labelledby="intro">
-      <div>
-        <div class="overline" id="intro">Introduction</div>
-        <h1>Frankie Colunga</h1>
-        <p>Senior at the University of Redlands (’26) double-majoring in Computer Science & GIS.</p>
-
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-eyebrow">Portfolio — 2026</div>
+      <h1 class="hero-name" id="hero-heading">Frankie<br><em>Colunga</em></h1>
+      <p class="hero-tagline">GIS analyst and software engineer based in San Bernardino, CA. I build spatial tools and systems that bridge geographic intelligence with modern software engineering.</p>
+      <div class="hero-tags">
+        <span class="htag htag-teal">GIS Analysis</span>
+        <span class="htag htag-purple">Software Engineering</span>
+        <span class="htag">Remote Sensing</span>
+        <span class="htag">Python</span>
+        <span class="htag">Bilingual — English / Spanish</span>
       </div>
+    </section>
 
+    <!-- EDUCATION -->
+    <section class="section" aria-labelledby="edu-heading">
+      <div class="section-label">Education</div>
+      <h2 id="edu-heading" style="display:none;">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card upcoming">
+          <div class="edu-badge">Starting fall 2026</div>
+          <div class="edu-school">Georgia Institute of Technology</div>
+          <div class="edu-degree">Online Master of Science in Computer Science (OMSCS)</div>
+          <div class="edu-meta">Atlanta, GA · Online</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">University of Redlands</div>
+          <div class="edu-degree">BA in Geographic Information Systems<br>BS in Computer Science</div>
+          <div class="edu-meta">Graduated April 2026 · Redlands, CA</div>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section" aria-labelledby="proj">
-      <header>
-        <div>
-          <div class="overline">Projects</div>
-          <h2 id="proj">Technical Projects</h2>
-        </div>
-      </header>
+    <section id="projects" class="section" aria-labelledby="proj-heading">
+      <div class="section-label">Projects</div>
+      <h2 id="proj-heading" style="display:none;">Projects</h2>
+      <div class="proj-list">
 
-     <article class="case" aria-labelledby="mmpk">
-  <div>
-    <h3 id="mmpk">MMPK File Checker (Summer 2025)</h3>
-    <p class="sub">
-      Python desktop app to validate Esri mobile map packages before deployment.
-      Drag-and-drop GUI, zip parsing, and schema checks; packaged into a single .exe
-      with a custom icon for internal and customer use.
-      <br><br>  
-      Note: Due to confidentiality and internal policy, the source code for this tool cannot be publicly shared.
-    </p>
+        <article class="proj-card" aria-labelledby="p1">
+          <div class="proj-cat sw">Software</div>
+          <div class="proj-title" id="p1">Semantic segmentation for aerial imagery</div>
+          <div class="proj-desc">Deep learning pipeline to classify satellite and aerial imagery using SegFormer-B2. Trained on LoveDA and DeepGlobe datasets, achieving ~0.64 mIoU. Includes a Gradio web interface for live inference. Built on a local RTX 5080 with AMD Ryzen 9950X3D.</div>
+          <div class="proj-chips">
+            <span class="chip sw">Python</span>
+            <span class="chip sw">PyTorch</span>
+            <span class="chip sw">SegFormer-B2</span>
+            <span class="chip sw">Gradio</span>
+            <span class="chip sw">RTX 5080</span>
+          </div>
+          <div class="proj-note">CS Capstone · Spring 2026</div>
+        </article>
 
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">Tkinter</span>
-      <span class="tag">PyInstaller</span>
-    </div>
-    <div class="impact">
-      <div class="chip"><span class="big">Risk ↓</span><span>Flags invalid files early</span></div>
-      <div class="chip"><span class="big">Friction ↓</span><span>Drag & drop UX</span></div>
-      <div class="chip"><span class="big">Packaging</span><span>Single-file .exe</span></div>
-    </div>
-  </div>
+        <article class="proj-card" aria-labelledby="p2">
+          <div class="proj-cat sw">Software</div>
+          <div class="proj-title" id="p2">MMPK file checker</div>
+          <div class="proj-desc">Python desktop app to validate Esri mobile map packages before deployment. Drag-and-drop GUI with zip parsing and schema checks. Packaged as a single .exe with a custom icon for internal and customer use at Motorola Solutions.</div>
+          <div class="proj-chips">
+            <span class="chip sw">Python</span>
+            <span class="chip sw">Tkinter</span>
+            <span class="chip sw">PyInstaller</span>
+          </div>
+          <div class="proj-note">Motorola Solutions · Summer 2025 · Source code confidential</div>
+        </article>
 
-  <div class="figure">
-  <a href="mmpkguii.png" target="_blank" rel="noopener"
-     style="display:block;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 0 10px rgba(0,0,0,0.08);">
-    <img
-      src="./mmpkguii.png"
-      alt="MMPK File Checker desktop GUI"
-      style="display:block;width:100%;height:auto;object-fit:contain;border-radius:12px;"
-      loading="lazy"
-      decoding="async"
-    />
-  </a>
-</div>
-</article>
+        <article class="proj-card" aria-labelledby="p3">
+          <div class="proj-cat gis">GIS</div>
+          <div class="proj-title" id="p3">CalFire HeloPod helitack suitability</div>
+          <div class="proj-desc">Suitability analysis identifying optimal helitack base locations across California. Combines terrain, road access, and fire risk criteria to rank candidate sites. Published as an interactive ArcGIS StoryMap.</div>
+          <div class="proj-chips">
+            <span class="chip gis">ArcGIS Pro</span>
+            <span class="chip gis">StoryMaps</span>
+            <span class="chip gis">Suitability Analysis</span>
+            <span class="chip gis">Raster Analysis</span>
+          </div>
+          <div class="proj-embed">
+            <iframe src="https://storymaps.arcgis.com/stories/e007292052804a44a4612fa0650f3149" height="460" allowfullscreen allow="geolocation" title="CalFire HeloPod helitack suitability StoryMap"></iframe>
+          </div>
+          <div class="proj-note">GIS Portfolio · Spring 2025</div>
+        </article>
 
+        <article class="proj-card" aria-labelledby="p4">
+          <div class="proj-cat gis">GIS</div>
+          <div class="proj-title" id="p4">Night sky quality ranking — contiguous US</div>
+          <div class="proj-desc">Ranked optimal sky-viewing areas across all 48 contiguous states using a 70/30 weighted overlay of light pollution and air quality rasters. High-scoring locations were linked to nearby accessible parks.</div>
+          <div class="proj-chips">
+            <span class="chip gis">ArcGIS Pro</span>
+            <span class="chip gis">Raster Analysis</span>
+            <span class="chip gis">Weighted Overlay</span>
+          </div>
+          <div class="proj-embed">
+            <iframe src="https://storymaps.arcgis.com/stories/b6c75d46f04c44c98d8309220b7fdeaa" height="460" allowfullscreen allow="geolocation" title="Night sky quality ranking StoryMap"></iframe>
+          </div>
+          <div class="proj-note">GIS Portfolio · Spring 2025</div>
+        </article>
 
-<!-- Controllable Objects Simulation -->
-<article class="case" aria-labelledby="javaSim">
-  <div>
-    <h3 id="javaSim">Controllable Objects Simulation (Fall 2024)</h3>
-    <p class="sub">
-      Interactive Java program with four objects (A–D). One object is controllable via arrow keys and
-      switchable with Tab; others move autonomously. Demonstrates OOP structure and event-driven input.
-    </p>
-    <div class="tags">
-      <span class="tag">Java</span>
-      <span class="tag">OOP</span>
-      <span class="tag">Event Handling</span>
-    </div>
-  </div>
-  <div class="figure">
-    <a href="https://github.com/frankiecolunga/FinalSE" target="_blank" rel="noopener"
-       style="display:block;width:100%;height:100%;border-radius:16px;overflow:hidden;">
-      <img
-        src="/MovableObject.gif"
-        alt="Controllable Objects Simulation gameplay preview"
-        style="display:block;width:100%;height:100%;object-fit:cover;border:1px solid var(--line);"
-        loading="lazy"
-        decoding="async"
-      />
-    </a>
-  </div>
-</article>
+        <article class="proj-card" aria-labelledby="p5">
+          <div class="proj-cat gis">GIS</div>
+          <div class="proj-title" id="p5">Noise pollution & home price correlation</div>
+          <div class="proj-desc">Spatial study examining the relationship between noise pollution levels and residential property values. Produced cartographic outputs and statistical correlation analysis across study areas.</div>
+          <div class="proj-chips">
+            <span class="chip gis">ArcGIS Pro</span>
+            <span class="chip gis">Spatial Statistics</span>
+            <span class="chip gis">Cartography</span>
+          </div>
+          <div class="proj-embed">
+            <iframe src="https://storymaps.arcgis.com/stories/33bffa83783f4f0b8e83691d5c5aac1e" height="460" allowfullscreen allow="geolocation" title="Noise pollution and home price correlation StoryMap"></iframe>
+          </div>
+          <div class="proj-note">GIS Portfolio · Spring 2025</div>
+        </article>
 
+        <article class="proj-card" aria-labelledby="p6">
+          <div class="proj-cat gis">GIS</div>
+          <div class="proj-title" id="p6">Storm basin proposal — CASC Engineering</div>
+          <div class="proj-desc">Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and field-collected infiltration and soil data. Delivered cartographic products supporting site planning and decision-making.</div>
+          <div class="proj-chips">
+            <span class="chip gis">ArcGIS Pro</span>
+            <span class="chip gis">Field Sampling</span>
+            <span class="chip gis">Cartography</span>
+          </div>
+          <div class="proj-note">GIS 475 · Spring 2025</div>
+        </article>
 
-<!-- Sky Viewing Area Ranking -->
-<article class="case" aria-labelledby="sky">
-  <div>
-    <h3 id="sky">Sky Viewing Area Ranking (Spring 2025)</h3>
-    <p class="sub">
-      Ranked optimal sky-viewing areas by combining light pollution and air quality with a 70/30
-      weighted overlay; linked high-scoring locations to nearby parks for access.
-    </p>
-    <div class="tags">
-      <span class="tag">ArcGIS Pro</span>
-      <span class="tag">Raster Analysis</span>
-      <span class="tag">Weighted Overlay</span>
-    </div>
-  </div>
-  <div class="figure" style="padding:0;border:none;">
-    <iframe
-      src="https://storymaps.arcgis.com/stories/b6c75d46f04c44c98d8309220b7fdeaa"
-      width="100%" height="400"
-      frameborder="0" allowfullscreen
-      style="border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);">
-    </iframe>
-  </div>
-</article>
-
-
-      <!-- FIXED: Storm project as a proper card -->
-      <article class="case" aria-labelledby="storm">
-  <div>
-    <h3 id="storm">Storm Basin Proposal (Spring 2025)</h3>
-    <p class="sub">
-      Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and
-      field-collected infiltration &amp; soil data. Delivered cartographic products supporting planning.
-    </p>
-    <div class="tags">
-      <span class="tag">ArcGIS Pro</span>
-      <span class="tag">Field Sampling</span>
-      <span class="tag">Cartography</span>
-    </div>
-  </div>
-
-  <div class="figure">
-    <a href="/storm-drain-storyboard.pdf" target="_blank" rel="noopener"
-       style="display:block;width:100%;height:100%;border-radius:16px;overflow:hidden;">
-      <img
-        src="/sky-map.png"
-        alt="Storm Drain Basin storyboard preview"
-        style="display:block;width:100%;height:100%;object-fit:cover;border:1px solid var(--line);"
-        loading="lazy"
-        decoding="async"
-      />
-    </a>
-  </div>
-</article>
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section" aria-labelledby="exp">
-      <header>
+    <section id="experience" class="section" aria-labelledby="exp-heading">
+      <div class="section-label">Experience</div>
+      <h2 id="exp-heading" style="display:none;">Experience</h2>
+
+      <div class="exp-item">
         <div>
-          <div class="overline">Experience</div>
-          <h2 id="exp">Recent roles</h2>
+          <div class="exp-period">Sept 2025 – Present<br>Remote</div>
+          <div class="exp-co">TDS Telecom</div>
         </div>
-      </header>
-      <div class="timeline">
-        <div class="t">
-          <h3>TDS Telecom — Data Analyst & GIS Intern</h3>
-          <p>Sept 2025 – Present · Remote</p>
-          <ul>
-            <li>Organize and analyze internal datasets with Excel and ArcGIS Online.</li>
-            <li>Automate data checks and create simple dashboards/maps.</li>
-            <li>Partner with stakeholders to deliver actionable reports.</li>
-          </ul>
-        </div>
-        <div class="t">
-          <h3>Motorola Solutions — GIS Upgrade Operations Intern</h3>
-          <p>May – Aug 2025 · Remote/Hybrid</p>
-          <ul>
-            <li>Supported system upgrades and updated map datasets for CallWorks customers.</li>
-            <li>Built a Python desktop tool to validate MMPKs, reducing deployment risk.</li>
-            <li>Collaborated across teams; documented reproducible workflows.</li>
+        <div>
+          <div class="exp-role">Data analyst & GIS intern</div>
+          <ul class="exp-bullets">
+            <li>Organize and analyze internal datasets using Excel and ArcGIS Online.</li>
+            <li>Automate data checks and build dashboards and maps for stakeholder reporting.</li>
+            <li>Partner with stakeholders to deliver actionable, data-driven reports.</li>
           </ul>
         </div>
       </div>
-        </div>
-        <div class="t">
-          <h3>Barista — Starbucks</h3>
-          <p>Dec 2021 – May 2025 · San Bernardino</p>
-          <ul>
-            <li>Delivered bilingual service in a high-volume store, strengthening adaptability and problem-solving under pressure.</li>
 
+      <div class="exp-item">
+        <div>
+          <div class="exp-period">May – Aug 2025<br>Remote / Hybrid</div>
+          <div class="exp-co">Motorola Solutions</div>
+        </div>
+        <div>
+          <div class="exp-role">GIS upgrade operations intern</div>
+          <ul class="exp-bullets">
+            <li>Supported system upgrades and updated map datasets for CallWorks customers across the US via Linux remote access.</li>
+            <li>Built the MMPK File Checker — a Python desktop tool that reduced deployment risk by catching invalid map packages early.</li>
+            <li>Documented reproducible upgrade workflows across cross-functional teams.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-period">Dec 2021 – May 2025<br>San Bernardino, CA</div>
+          <div class="exp-co">Starbucks</div>
+        </div>
+        <div>
+          <div class="exp-role">Barista</div>
+          <ul class="exp-bullets">
+            <li>Delivered bilingual (English/Spanish) service in a high-volume store.</li>
+            <li>Developed adaptability and calm problem-solving under sustained pressure.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section" aria-labelledby="skillsH">
-      <header>
-        <div>
-
-          <h2 id="skillsH">Skills</h2>
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="section-label">Skills</div>
+      <h2 id="skills-heading" style="display:none;">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-list">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">SQL</span>
+            <span class="skill-item">JavaScript</span>
+          </div>
         </div>
-      </header>
-      <div class="case" style="grid-template-columns:1fr 1fr">
-        <div>
-          <h3>Languages & Tools</h3>
-          <p class="sub">Python · Java · SQL · Git · Jenkins · LucidChart · Linux</p>
+        <div class="skill-group">
+          <div class="skill-group-label">GIS & Spatial</div>
+          <div class="skill-list">
+            <span class="skill-item">ArcGIS Pro</span>
+            <span class="skill-item">ArcGIS Online</span>
+            <span class="skill-item">StoryMaps</span>
+            <span class="skill-item">Remote sensing</span>
+            <span class="skill-item">Raster & vector analysis</span>
+          </div>
         </div>
-        <div>
-          <h3>Tools & GIS</h3>
-          <p class="sub">ArcGIS Pro · ArcGIS Online · StoryMaps · Raster & Vector Analysis · Remote Sensing </p>
-        </div>
-        <div>
-          <h3>Platforms</h3>
-          <p class="sub">Windows · MacOS · Linux · VMware</p>
+        <div class="skill-group">
+          <div class="skill-group-label">Tools & Platforms</div>
+          <div class="skill-list">
+            <span class="skill-item">Git · Jenkins</span>
+            <span class="skill-item">Linux · VMware</span>
+            <span class="skill-item">PyTorch · Gradio</span>
+            <span class="skill-item">LucidChart</span>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section" aria-labelledby="contactH">
-      <header>
-        <div>
-          <div class="overline">Contact</div>
-          <h2 id="contactH">Let’s connect</h2>
-        </div>
-      </header>
-      <div class="case" style="grid-template-columns:1fr">
-        <p>Email: <a href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">linkedin.com/in/frankiecol</a></p>
-        <p>GitHub: <a href="https://github.com/frankiecolunga" target="_blank" rel="noopener">github.com/frankiecolunga</a></p>
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="section-label">Contact</div>
+      <h2 id="contact-heading" style="display:none;">Contact</h2>
+      <div class="contact-row">
+        <a class="contact-link" href="mailto:colungafrankie@gmail.com">colungafrankie@gmail.com</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/frankiecol/" target="_blank" rel="noopener">linkedin.com/in/frankiecol</a>
+        <a class="contact-link" href="https://github.com/frankiecolunga" target="_blank" rel="noopener">github.com/frankiecolunga</a>
       </div>
     </section>
 
-    <footer class="foot">© <span id="y"></span> Frankie Colunga · Built with semantic HTML/CSS · GitHub Pages</footer>
+    <footer class="foot">
+      © <span id="yr"></span> Frankie Colunga · Built with semantic HTML/CSS · GitHub Pages
+    </footer>
+
   </main>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

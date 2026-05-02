@@ -14,8 +14,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0f172a;
-      --muted: #64748b;
+      --ink: #060912;
+      --muted: #2d3748;
       --line: #e2e8f0;
       --soft: #f8fafc;
       --teal-bg: #E1F5EE;
@@ -25,10 +25,17 @@
       --teal-accent: #1D9E75;
       --teal-badge: #9FE1CB;
       --teal-badge-text: #04342C;
-      --purple-bg: #EEEDFE;
-      --purple-border: #AFA9EC;
-      --purple-text: #3C3489;
-      --purple-dark: #534AB7;
+      --purple-bg: #EBF4FD;
+      --purple-border: #7EC8E3;
+      --purple-text: #0C4A6E;
+      --purple-dark: #1A6FA5;
+      --maroon-bg: #F9ECEC;
+      --maroon-border: #C0737A;
+      --maroon-text: #6B1E24;
+      --maroon-mid: #8B2B33;
+      --maroon-accent: #A83840;
+      --maroon-badge: #E8A0A5;
+      --maroon-badge-text: #4A1218;
       --gis-bg: #E1F5EE;
       --gis-text: #085041;
       --max: 860px;
@@ -37,7 +44,7 @@
     }
 
     html, body {
-      background: #ffffff;
+      background: #FDFAF5;
       color: var(--ink);
       font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
@@ -86,7 +93,7 @@
     .nav-links a:hover { background: #e0e7ff; text-decoration: none; }
     .nav-cta {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 800;
       color: #ffffff !important;
       background: #2563eb !important;
       border-color: #2563eb !important;
@@ -109,12 +116,13 @@
     .section:last-child { border-bottom: none; }
 
     .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ink);
       margin-bottom: 1.75rem;
+      letter-spacing: -0.3px;
+      text-align: center;
     }
 
     /* ── HERO ── */
@@ -137,6 +145,7 @@
       color: var(--ink);
       margin-bottom: 1.25rem;
       letter-spacing: -0.5px;
+      font-weight: 700;
     }
     .hero-name em {
       font-style: italic;
@@ -202,7 +211,7 @@
     }
     .edu-school {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--ink);
       margin-bottom: 4px;
     }
@@ -236,7 +245,8 @@
       flex-direction: column;
       gap: 10px;
     }
-    .proj-cat {
+    .proj-card.sw { background: #EBF4FD; border-color: #7EC8E3; }
+    .proj-card.gis { background: #EAF5EE; border-color: #5DCAA5; }
       font-family: 'DM Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.1em;
@@ -246,7 +256,7 @@
     .proj-cat.gis { color: var(--teal-mid); }
     .proj-title {
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--ink);
       line-height: 1.35;
     }
@@ -308,13 +318,13 @@
     }
     .exp-co {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--muted);
       margin-top: 4px;
     }
     .exp-role {
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 800;
       color: var(--ink);
       margin-bottom: 8px;
     }
@@ -373,6 +383,7 @@
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .contact-link {
       font-size: 13px;
@@ -423,15 +434,9 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-eyebrow">Portfolio — 2026</div>
-      <h1 class="hero-name" id="hero-heading">Frankie<br><em>Colunga</em></h1>
-      <p class="hero-tagline">GIS analyst and software engineer based in San Bernardino, CA. I build spatial tools and systems that bridge geographic intelligence with modern software engineering.</p>
-      <div class="hero-tags">
-        <span class="htag htag-teal">GIS Analysis</span>
-        <span class="htag htag-purple">Software Engineering</span>
-        <span class="htag">Remote Sensing</span>
-        <span class="htag">Python</span>
-        <span class="htag">Bilingual — English / Spanish</span>
-      </div>
+      <h1 class="hero-name" id="hero-heading" style="text-align:center;">Frankie <em>Colunga</em></h1>
+      <p class="hero-tagline" style="text-align:center;max-width:100%;">Dual degree in GIS and Computer Science from the University of Redlands with hands-on experience at Motorola Solutions and TDS Telecom.</p>
+
     </section>
 
     <!-- EDUCATION -->
@@ -439,16 +444,16 @@
       <div class="section-label">Education</div>
       <h2 id="edu-heading" style="display:none;">Education</h2>
       <div class="edu-grid">
-        <div class="edu-card upcoming">
-          <div class="edu-badge">Starting fall 2026</div>
-          <div class="edu-school">Georgia Institute of Technology</div>
-          <div class="edu-degree">Online Master of Science in Computer Science (OMSCS)</div>
-          <div class="edu-meta">Atlanta, GA · Online</div>
+        <div class="edu-card" style="border-color:var(--maroon-border);background:var(--maroon-bg);">
+          <div class="edu-school" style="color:var(--maroon-text);">University of Redlands</div>
+          <div class="edu-degree" style="color:var(--maroon-mid);">BA in Geographic Information Systems<br>BS in Computer Science</div>
+          <div class="edu-meta" style="color:var(--maroon-accent);">Graduated April 2026 · Redlands, CA</div>
         </div>
-        <div class="edu-card">
-          <div class="edu-school">University of Redlands</div>
-          <div class="edu-degree">BA in Geographic Information Systems<br>BS in Computer Science</div>
-          <div class="edu-meta">Graduated April 2026 · Redlands, CA</div>
+        <div class="edu-card upcoming" style="border-color:#C8960C;background:#FEF9EC;">
+          <div class="edu-badge" style="background:#F9D86A;color:#5C3D00;">Starting fall 2026</div>
+          <div class="edu-school" style="color:#5C3D00;">Georgia Institute of Technology</div>
+          <div class="edu-degree" style="color:#8A5C00;">Online Master of Science in Computer Science (OMSCS)</div>
+          <div class="edu-meta" style="color:#B07D10;">Atlanta, GA · Online</div>
         </div>
       </div>
     </section>
@@ -459,7 +464,7 @@
       <h2 id="proj-heading" style="display:none;">Projects</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
 
-        <article class="proj-card" aria-labelledby="p1">
+        <article class="proj-card sw" aria-labelledby="p1">
           <div class="proj-cat sw">Software</div>
           <div class="proj-title" id="p1">MMPK file checker</div>
           <div class="proj-desc">Python desktop app to validate Esri mobile map packages before deployment. Drag-and-drop GUI with zip parsing and schema checks. Packaged as a single .exe for internal and customer use at Motorola Solutions.</div>
@@ -476,7 +481,7 @@
           <div class="proj-note">Motorola Solutions · Summer 2025 · Source code confidential</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p2">
+        <article class="proj-card sw" aria-labelledby="p2">
           <div class="proj-cat sw">Software</div>
           <div class="proj-title" id="p2">Semantic segmentation for aerial imagery</div>
           <div class="proj-desc">Deep learning pipeline to classify satellite and aerial imagery using SegFormer-B2. Trained on LoveDA and DeepGlobe datasets, achieving ~0.64 mIoU. Includes a Gradio web interface for live inference. Built on a local RTX 5080 with AMD Ryzen 9950X3D.</div>
@@ -487,10 +492,13 @@
             <span class="chip sw">Gradio</span>
             <span class="chip sw">RTX 5080</span>
           </div>
-          <div class="proj-note">CS Capstone · Spring 2026 · <a href="demo.html" style="color:var(--muted);">Try browser demo</a></div>
+          <div class="proj-embed" style="background:#0f172a;">
+            <img src="SemSeg.png" alt="Semantic segmentation output on aerial imagery" style="width:100%;height:auto;display:block;border-radius:0;" loading="lazy" />
+          </div>
+          <div class="proj-note">CS Capstone · Spring 2026</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p3">
+        <article class="proj-card sw" aria-labelledby="p3">
           <div class="proj-cat sw">Software</div>
           <div class="proj-title" id="p3">Controllable objects simulation</div>
           <div class="proj-desc">Interactive Java program with four objects (A–D). One object is controllable via arrow keys and switchable with Tab; others move autonomously. Demonstrates OOP structure and event-driven input.</div>
@@ -507,7 +515,7 @@
           <div class="proj-note">Fall 2024 · <a href="https://github.com/frankiecolunga/FinalSE" target="_blank" rel="noopener" style="color:var(--muted);">github.com/frankiecolunga/FinalSE</a></div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p4">
+        <article class="proj-card gis" aria-labelledby="p4">
           <div class="proj-cat gis">GIS</div>
           <div class="proj-title" id="p4">CalFire HeloPod helitack suitability</div>
           <div class="proj-desc">Suitability analysis identifying optimal helitack base locations across California. Combines terrain, road access, and fire risk criteria to rank candidate sites. Published as an interactive ArcGIS StoryMap.</div>
@@ -523,7 +531,7 @@
           <div class="proj-note">GIS Portfolio · Spring 2025</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p5">
+        <article class="proj-card gis" aria-labelledby="p5">
           <div class="proj-cat gis">GIS</div>
           <div class="proj-title" id="p5">Night sky quality ranking — contiguous US</div>
           <div class="proj-desc">Ranked optimal sky-viewing areas across all 48 contiguous states using a 70/30 weighted overlay of light pollution and air quality rasters. High-scoring locations linked to nearby accessible parks.</div>
@@ -538,7 +546,7 @@
           <div class="proj-note">GIS Portfolio · Spring 2025</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p6">
+        <article class="proj-card gis" aria-labelledby="p6">
           <div class="proj-cat gis">GIS</div>
           <div class="proj-title" id="p6">Noise pollution & home price correlation</div>
           <div class="proj-desc">Spatial study examining the relationship between noise pollution levels and residential property values. Produced cartographic outputs and statistical correlation analysis across study areas.</div>
@@ -553,7 +561,7 @@
           <div class="proj-note">GIS Portfolio · Spring 2025</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p7">
+        <article class="proj-card gis" aria-labelledby="p7">
           <div class="proj-cat gis">GIS</div>
           <div class="proj-title" id="p7">Storm basin proposal — CASC Engineering</div>
           <div class="proj-desc">Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and field-collected infiltration and soil data. Delivered cartographic products supporting site planning and decision-making.</div>
@@ -586,9 +594,8 @@
         <div>
           <div class="exp-role">Data analyst & GIS intern</div>
           <ul class="exp-bullets">
-            <li>Organize and analyze internal datasets using Excel and ArcGIS Online.</li>
-            <li>Automate data checks and build dashboards and maps for stakeholder reporting.</li>
-            <li>Partner with stakeholders to deliver actionable, data-driven reports.</li>
+            <li>Analyze held orders by integrating Excel datasets, GIS layers, and system reports, identifying root causes and expediting order resolution.</li>
+            <li>Conduct joint-trench opportunity analyses using spatial data and cost models to optimize fiber deployment budgets.</li>
           </ul>
         </div>
       </div>
@@ -601,9 +608,10 @@
         <div>
           <div class="exp-role">GIS upgrade operations intern</div>
           <ul class="exp-bullets">
-            <li>Supported system upgrades and updated map datasets for CallWorks customers across the US via Linux remote access.</li>
-            <li>Built the MMPK File Checker — a Python desktop tool that reduced deployment risk by catching invalid map packages early.</li>
-            <li>Documented reproducible upgrade workflows across cross-functional teams.</li>
+            <li>Supported the upgrade of mission-critical GIS systems for public safety clients through Linux, ensuring data integrity and operational continuity across complex geospatial infrastructures.</li>
+            <li>Assisted engineers with testing and deployment preparation across various U.S. municipalities.</li>
+            <li>Led the design and development of a Python-based MMPK validation tool adopted by Product and Engineering teams and used in all customer map upgrades moving forward.</li>
+            <li>Led customer outreach to 200+ CallWorks clients with outdated maps, updating personnel records and increasing engagement for map updates.</li>
           </ul>
         </div>
       </div>
@@ -616,8 +624,7 @@
         <div>
           <div class="exp-role">Barista</div>
           <ul class="exp-bullets">
-            <li>Delivered bilingual (English/Spanish) service in a high-volume store.</li>
-            <li>Developed adaptability and calm problem-solving under sustained pressure.</li>
+            <li>Delivered bilingual customer service in a fast-paced environment, maintaining professionalism under pressure.</li>
           </ul>
         </div>
       </div>
@@ -634,17 +641,15 @@
             <span class="skill-item">Python</span>
             <span class="skill-item">Java</span>
             <span class="skill-item">SQL</span>
-            <span class="skill-item">JavaScript</span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-label">GIS & Spatial</div>
+          <div class="skill-group-label">GIS</div>
           <div class="skill-list">
             <span class="skill-item">ArcGIS Pro</span>
             <span class="skill-item">ArcGIS Online</span>
-            <span class="skill-item">StoryMaps</span>
-            <span class="skill-item">Remote sensing</span>
-            <span class="skill-item">Raster & vector analysis</span>
+            <span class="skill-item">ArcGIS Suite</span>
+            <span class="skill-item">QGIS</span>
           </div>
         </div>
         <div class="skill-group">
@@ -652,7 +657,6 @@
           <div class="skill-list">
             <span class="skill-item">Git · Jenkins</span>
             <span class="skill-item">Linux · VMware</span>
-            <span class="skill-item">PyTorch · Gradio</span>
             <span class="skill-item">LucidChart</span>
           </div>
         </div>

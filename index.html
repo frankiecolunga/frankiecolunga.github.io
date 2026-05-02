@@ -457,11 +457,42 @@
     <section id="projects" class="section" aria-labelledby="proj-heading">
       <div class="section-label">Projects</div>
       <h2 id="proj-heading" style="display:none;">Projects</h2>
-      <div class="proj-list">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
 
-        <article class="proj-card" aria-labelledby="p0">
+        <article class="proj-card" aria-labelledby="p1">
           <div class="proj-cat sw">Software</div>
-          <div class="proj-title" id="p0">Controllable objects simulation</div>
+          <div class="proj-title" id="p1">MMPK file checker</div>
+          <div class="proj-desc">Python desktop app to validate Esri mobile map packages before deployment. Drag-and-drop GUI with zip parsing and schema checks. Packaged as a single .exe for internal and customer use at Motorola Solutions.</div>
+          <div class="proj-chips">
+            <span class="chip sw">Python</span>
+            <span class="chip sw">Tkinter</span>
+            <span class="chip sw">PyInstaller</span>
+          </div>
+          <div class="proj-embed" style="background:#f8fafc;">
+            <a href="mmpkguii.png" target="_blank" rel="noopener" style="display:block;">
+              <img src="mmpkguii.png" alt="MMPK File Checker desktop GUI screenshot" style="width:100%;height:auto;display:block;border-radius:0;" loading="lazy" />
+            </a>
+          </div>
+          <div class="proj-note">Motorola Solutions · Summer 2025 · Source code confidential</div>
+        </article>
+
+        <article class="proj-card" aria-labelledby="p2">
+          <div class="proj-cat sw">Software</div>
+          <div class="proj-title" id="p2">Semantic segmentation for aerial imagery</div>
+          <div class="proj-desc">Deep learning pipeline to classify satellite and aerial imagery using SegFormer-B2. Trained on LoveDA and DeepGlobe datasets, achieving ~0.64 mIoU. Includes a Gradio web interface for live inference. Built on a local RTX 5080 with AMD Ryzen 9950X3D.</div>
+          <div class="proj-chips">
+            <span class="chip sw">Python</span>
+            <span class="chip sw">PyTorch</span>
+            <span class="chip sw">SegFormer-B2</span>
+            <span class="chip sw">Gradio</span>
+            <span class="chip sw">RTX 5080</span>
+          </div>
+          <div class="proj-note">CS Capstone · Spring 2026 · <a href="demo.html" style="color:var(--muted);">Try browser demo</a></div>
+        </article>
+
+        <article class="proj-card" aria-labelledby="p3">
+          <div class="proj-cat sw">Software</div>
+          <div class="proj-title" id="p3">Controllable objects simulation</div>
           <div class="proj-desc">Interactive Java program with four objects (A–D). One object is controllable via arrow keys and switchable with Tab; others move autonomously. Demonstrates OOP structure and event-driven input.</div>
           <div class="proj-chips">
             <span class="chip sw">Java</span>
@@ -476,40 +507,9 @@
           <div class="proj-note">Fall 2024 · <a href="https://github.com/frankiecolunga/FinalSE" target="_blank" rel="noopener" style="color:var(--muted);">github.com/frankiecolunga/FinalSE</a></div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p1">
-          <div class="proj-cat sw">Software</div>
-          <div class="proj-title" id="p1">Semantic segmentation for aerial imagery</div>
-          <div class="proj-desc">Deep learning pipeline to classify satellite and aerial imagery using SegFormer-B2. Trained on LoveDA and DeepGlobe datasets, achieving ~0.64 mIoU. Includes a Gradio web interface for live inference. Built on a local RTX 5080 with AMD Ryzen 9950X3D.</div>
-          <div class="proj-chips">
-            <span class="chip sw">Python</span>
-            <span class="chip sw">PyTorch</span>
-            <span class="chip sw">SegFormer-B2</span>
-            <span class="chip sw">Gradio</span>
-            <span class="chip sw">RTX 5080</span>
-          </div>
-          <div class="proj-note">CS Capstone · Spring 2026</div>
-        </article>
-
-        <article class="proj-card" aria-labelledby="p2">
-          <div class="proj-cat sw">Software</div>
-          <div class="proj-title" id="p2">MMPK file checker</div>
-          <div class="proj-desc">Python desktop app to validate Esri mobile map packages before deployment. Drag-and-drop GUI with zip parsing and schema checks. Packaged as a single .exe with a custom icon for internal and customer use at Motorola Solutions.</div>
-          <div class="proj-chips">
-            <span class="chip sw">Python</span>
-            <span class="chip sw">Tkinter</span>
-            <span class="chip sw">PyInstaller</span>
-          </div>
-          <div class="proj-embed" style="background:#f8fafc;">
-            <a href="mmpkguii.png" target="_blank" rel="noopener" style="display:block;">
-              <img src="mmpkguii.png" alt="MMPK File Checker desktop GUI screenshot" style="width:100%;height:auto;display:block;border-radius:0;" loading="lazy" />
-            </a>
-          </div>
-          <div class="proj-note">Motorola Solutions · Summer 2025 · Source code confidential</div>
-        </article>
-
-        <article class="proj-card" aria-labelledby="p3">
+        <article class="proj-card" aria-labelledby="p4">
           <div class="proj-cat gis">GIS</div>
-          <div class="proj-title" id="p3">CalFire HeloPod helitack suitability</div>
+          <div class="proj-title" id="p4">CalFire HeloPod helitack suitability</div>
           <div class="proj-desc">Suitability analysis identifying optimal helitack base locations across California. Combines terrain, road access, and fire risk criteria to rank candidate sites. Published as an interactive ArcGIS StoryMap.</div>
           <div class="proj-chips">
             <span class="chip gis">ArcGIS Pro</span>
@@ -518,29 +518,29 @@
             <span class="chip gis">Raster Analysis</span>
           </div>
           <div class="proj-embed">
-            <iframe src="https://storymaps.arcgis.com/stories/e007292052804a44a4612fa0650f3149" height="460" allowfullscreen allow="geolocation" title="CalFire HeloPod helitack suitability StoryMap"></iframe>
-          </div>
-          <div class="proj-note">GIS Portfolio · Spring 2025</div>
-        </article>
-
-        <article class="proj-card" aria-labelledby="p4">
-          <div class="proj-cat gis">GIS</div>
-          <div class="proj-title" id="p4">Night sky quality ranking — contiguous US</div>
-          <div class="proj-desc">Ranked optimal sky-viewing areas across all 48 contiguous states using a 70/30 weighted overlay of light pollution and air quality rasters. High-scoring locations were linked to nearby accessible parks.</div>
-          <div class="proj-chips">
-            <span class="chip gis">ArcGIS Pro</span>
-            <span class="chip gis">Raster Analysis</span>
-            <span class="chip gis">Weighted Overlay</span>
-          </div>
-          <div class="proj-embed">
-            <iframe src="https://storymaps.arcgis.com/stories/b6c75d46f04c44c98d8309220b7fdeaa" height="460" allowfullscreen allow="geolocation" title="Night sky quality ranking StoryMap"></iframe>
+            <iframe src="https://storymaps.arcgis.com/stories/e007292052804a44a4612fa0650f3149" height="320" allowfullscreen allow="geolocation" title="CalFire HeloPod StoryMap"></iframe>
           </div>
           <div class="proj-note">GIS Portfolio · Spring 2025</div>
         </article>
 
         <article class="proj-card" aria-labelledby="p5">
           <div class="proj-cat gis">GIS</div>
-          <div class="proj-title" id="p5">Noise pollution & home price correlation</div>
+          <div class="proj-title" id="p5">Night sky quality ranking — contiguous US</div>
+          <div class="proj-desc">Ranked optimal sky-viewing areas across all 48 contiguous states using a 70/30 weighted overlay of light pollution and air quality rasters. High-scoring locations linked to nearby accessible parks.</div>
+          <div class="proj-chips">
+            <span class="chip gis">ArcGIS Pro</span>
+            <span class="chip gis">Raster Analysis</span>
+            <span class="chip gis">Weighted Overlay</span>
+          </div>
+          <div class="proj-embed">
+            <iframe src="https://storymaps.arcgis.com/stories/b6c75d46f04c44c98d8309220b7fdeaa" height="320" allowfullscreen allow="geolocation" title="Night sky quality ranking StoryMap"></iframe>
+          </div>
+          <div class="proj-note">GIS Portfolio · Spring 2025</div>
+        </article>
+
+        <article class="proj-card" aria-labelledby="p6">
+          <div class="proj-cat gis">GIS</div>
+          <div class="proj-title" id="p6">Noise pollution & home price correlation</div>
           <div class="proj-desc">Spatial study examining the relationship between noise pollution levels and residential property values. Produced cartographic outputs and statistical correlation analysis across study areas.</div>
           <div class="proj-chips">
             <span class="chip gis">ArcGIS Pro</span>
@@ -548,14 +548,14 @@
             <span class="chip gis">Cartography</span>
           </div>
           <div class="proj-embed">
-            <iframe src="https://storymaps.arcgis.com/stories/33bffa83783f4f0b8e83691d5c5aac1e" height="460" allowfullscreen allow="geolocation" title="Noise pollution and home price correlation StoryMap"></iframe>
+            <iframe src="https://storymaps.arcgis.com/stories/33bffa83783f4f0b8e83691d5c5aac1e" height="320" allowfullscreen allow="geolocation" title="Noise pollution and home price StoryMap"></iframe>
           </div>
           <div class="proj-note">GIS Portfolio · Spring 2025</div>
         </article>
 
-        <article class="proj-card" aria-labelledby="p6">
+        <article class="proj-card" aria-labelledby="p7">
           <div class="proj-cat gis">GIS</div>
-          <div class="proj-title" id="p6">Storm basin proposal — CASC Engineering</div>
+          <div class="proj-title" id="p7">Storm basin proposal — CASC Engineering</div>
           <div class="proj-desc">Partnered with CASC Engineering to propose a storm drain basin using ArcGIS Pro and field-collected infiltration and soil data. Delivered cartographic products supporting site planning and decision-making.</div>
           <div class="proj-chips">
             <span class="chip gis">ArcGIS Pro</span>
